@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://tankttt.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Strong when strong, to strive, to seek, to find.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tank">
+<meta property="og:url" content="https://tankttt.github.io/page/2/index.html">
+<meta property="og:site_name" content="Tank">
+<meta property="og:description" content="Strong when strong, to strive, to seek, to find.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Tank">
+<meta property="article:tag" content="全栈  Java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://tankttt.github.io/page/2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
+</script>
+
+  <title>Tank</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tank</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Java, SpringBoot, SpringCloud, Design Pattern.</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/08/23/1.3.3%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BBlist_set_queue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/23/1.3.3%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BBlist_set_queue/" class="post-title-link" itemprop="url">1.3.3并发容器类list_set_queue</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-23 16:51:10 / 修改时间：22:18:19" itemprop="dateCreated datePublished" datetime="2020-08-23T16:51:10+08:00">2020-08-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><h1>并发容器类list_set_queue</h1></center>
+# <font color="#0A77B9">一、List</font>
+
+<p><font color="#0A77B9">CopyOnWrite</font>Arraylist容器即写时复制的容器</p>
+<p>和ArrayList比较，<font color="#0A77B9">优点是并发安全</font>，缺点有两个：</p>
+<ol>
+<li>多了内存占用：写数据是copy一份完整的数据，单独进行操作。占用双份内存。</li>
+<li>数据一致性：数据写完之后，其他线程不一定是马上读取到最新内容。</li>
+</ol>
+<p><img src="/2020/08/23/1.3/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598175532751.png" alt="1598175532751"></p>
+<h1 id="二、Set集合"><a href="#二、Set集合" class="headerlink" title="二、Set集合"></a><font color="#0A77B9">二、Set集合</font></h1><p>Set和List重要区别：不重复</p>
+<table>
+<thead>
+<tr>
+<th align="center">实现</th>
+<th align="center">原理</th>
+<th align="center">特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">HashSet</td>
+<td align="center">基于HashMap实现</td>
+<td align="center">非线程安全</td>
+</tr>
+<tr>
+<td align="center">CopyOnWriteArraySet</td>
+<td align="center">基于CopyOnWriteArrayList</td>
+<td align="center">线程安全</td>
+</tr>
+<tr>
+<td align="center">ConcurrentSkipListSet</td>
+<td align="center">基于ConcurrentSkipListMap</td>
+<td align="center">线程安全，有序，查询快</td>
+</tr>
+</tbody></table>
+<p>PS：添加对象时，需重写该对象的equals()和hashCode()</p>
+<h1 id="三、Queue-API"><a href="#三、Queue-API" class="headerlink" title="三、Queue API"></a><font color="#0A77B9">三、Queue API</font></h1><p>Queue-队列数据结构的实现。分为阻塞队列和非阻塞队列。下列的蓝色区块，为阻塞队列特有方法。</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="left">作用</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">add</td>
+<td align="left">增加一个元素</td>
+<td>如果队列已满，则抛出一个IllegalStateException异常</td>
+</tr>
+<tr>
+<td align="center">remove</td>
+<td align="left">移除并返回队列头部的元素</td>
+<td>如果队列为空，则抛出一个NoSuchElementException异常</td>
+</tr>
+<tr>
+<td align="center">element</td>
+<td align="left">返回队列头部的元素</td>
+<td>如果队列为空，则抛出一个NoSuchElementException异常</td>
+</tr>
+<tr>
+<td align="center">offer</td>
+<td align="left">添加一个元素并返回true</td>
+<td>如果队列已满，则返回false</td>
+</tr>
+<tr>
+<td align="center">poll</td>
+<td align="left">移除并返回队列头部的元素</td>
+<td>如果队列为空，则返回null</td>
+</tr>
+<tr>
+<td align="center">peek</td>
+<td align="left">返回队列头部的元素</td>
+<td>如果队列为空，则返回null</td>
+</tr>
+<tr>
+<td align="center"><font color="#0A77B9">put</font></td>
+<td align="left"><font color="#0A77B9">添加一个元素</font></td>
+<td><font color="#0A77B9">如果队列满，则阻塞</font></td>
+</tr>
+<tr>
+<td align="center"><font color="#0A77B9">take</font></td>
+<td align="left"><font color="#0A77B9">移除并返回队列头部的元素</font></td>
+<td><font color="#0A77B9">如果队列为空，则阻塞</font></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/08/19/1.3.2%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BBmap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/19/1.3.2%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BBmap/" class="post-title-link" itemprop="url">1.3.2并发容器类map</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-19 22:49:29" itemprop="dateCreated datePublished" datetime="2020-08-19T22:49:29+08:00">2020-08-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-23 16:50:52" itemprop="dateModified" datetime="2020-08-23T16:50:52+08:00">2020-08-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><h1>并发容器类map</h1></center>
+
+<h1 id="一、JDK源码学习方法更重要"><a href="#一、JDK源码学习方法更重要" class="headerlink" title="一、JDK源码学习方法更重要"></a><font color="#0A77B9">一、JDK源码学习方法更重要</font></h1><p>逻辑思维能力是<font color="red">梳理学习方法的基础</font>。养成线性思维：两个或者多个概念，像一条线串起来。</p>
+<ul>
+<li><p><font color="#0A77B9">演绎推导法</font></p>
+<p>示例：因果推理。因为Java中网络编程只提供了BIO和NIO两种方法，所以一切框架中，涉及到网络处理的，都 可以用这两个知识点去探究原理。</p>
+</li>
+<li><p><font color="#0A77B9">归纳总结法</font></p>
+<p>示例：可能正确的猜想。线上10台服务器，有三台总是每天会自动重启，收集相关信息后，发现是运维在修改监控系统配置的时候，漏掉了提高这三台机器的重启阀值。</p>
+</li>
+<li><p><font color="#0A77B9">类比法</font></p>
+<p>集群概念就好像是马在拉车，一匹马拉不动的时候，就使用多匹马去拉。</p>
+<p>分布式的概念，就像是理发的过程中，洗头发和剪头发是不同的人负责的。</p>
+</li>
+</ul>
+<h1 id="二、推理HashMap的实现"><a href="#二、推理HashMap的实现" class="headerlink" title="二、推理HashMap的实现"></a><font color="#0A77B9">二、推理HashMap的实现</font></h1><ol>
+<li><p><font color="#0A77B9">数据要存储</font></p>
+<p>涉及到数据结构：数组、链表、栈、树、队列</p>
+</li>
+<li><p><font color="#0A77B9">数组的插入和查找</font></p>
+<ol>
+<li>顺序查找：插入时按先后顺序插入，查找时轮询扫描进行比对。</li>
+<li>二分查找：插入时进行排序；查找时将n个元素分成大致相等的两部分，减少复杂度。</li>
+<li>分块查找：分块查找是二分查找和顺序查找的一种改进。</li>
+<li><font color="red">哈希表</font>：对元素的关键信息进行hash计算，求出下标后直接插入或查找。常用的实现是除留余数法。</li>
+</ol>
+</li>
+<li><p><font color="#0A77B9">哈希冲突，数组位置已存在值</font></p>
+<p>hash(key2)=hash(key1)。链地址伐；ReHash1(key2)再次计算hash；</p>
+</li>
+<li><p><font color="#0A77B9">合理控制数组和链表的长度</font></p>
+<p>动态扩容resize()</p>
+</li>
+</ol>
+<h1 id="三、HashMap-非线程安全"><a href="#三、HashMap-非线程安全" class="headerlink" title="三、HashMap-非线程安全"></a><font color="#0A77B9">三、HashMap-非线程安全</font></h1><p>  <img src="/2020/08/19/1.3/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598162080760.png" alt="1598162080760"></p>
+<p>PS：实现线程安全的三种方法：</p>
+<ol>
+<li>sync关键字</li>
+<li>lock</li>
+<li>cas机制</li>
+</ol>
+<p>PS：扩容是什么？</p>
+<ol>
+<li>计算一个新的大小</li>
+<li>构建一个newTable</li>
+<li>遍历oldTable添加到newTable</li>
+</ol>
+<h1 id="四、ConcurrentHashMap1-7-线程安全"><a href="#四、ConcurrentHashMap1-7-线程安全" class="headerlink" title="四、ConcurrentHashMap1.7-线程安全"></a><font color="#0A77B9">四、ConcurrentHashMap1.7-线程安全</font></h1><p>HashTable太过于粗暴，推荐使用ConcurrentHashMap，包一层segment确保线程安全</p>
+<p><img src="/2020/08/19/1.3/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598162697688.png" alt="1598162697688"></p>
+<h1 id="五、ConcurrentSkipListMap"><a href="#五、ConcurrentSkipListMap" class="headerlink" title="五、ConcurrentSkipListMap"></a><font color="#0A77B9">五、ConcurrentSkipListMap</font></h1><p>特点：有序链表实现，无锁实现；value不能为空；层级越高跳跃性越大，数据越少，查询理论变快。</p>
+<p>新的node是否抽出来作为index，随机决定；</p>
+<p>index对应的level由随机数决定。（随机数比特位连续为1的数量）</p>
+<p>每层的元素，headIndex固定为所有node中最小的；</p>
+<p>查找数据时，按照从上到下，从左往右的顺序查找</p>
+<p>时间复杂度O(log n)，空间复杂度O(n)。</p>
+<p>空间换时间，数据库索引类似的概念，skiplist在很多开源组件中有使用（level DB，Redis）</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/08/09/Spring%20boot%20starter%E8%A7%A3%E5%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/09/Spring%20boot%20starter%E8%A7%A3%E5%AF%86/" class="post-title-link" itemprop="url">Spring boot starter解密</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-09 16:32:30 / 修改时间：16:43:32" itemprop="dateCreated datePublished" datetime="2020-08-09T16:32:30+08:00">2020-08-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><h1>Spring boot starter解密</h1></center>
+# 课程内容大纲
+
+<ul>
+<li>starter让开发变得如此简单</li>
+<li>starter原理解密</li>
+<li>制作自己的starter</li>
+</ul>
+<h1 id="感受spring-boot的简单易用"><a href="#感受spring-boot的简单易用" class="headerlink" title="感受spring boot的简单易用"></a>感受spring boot的简单易用</h1><ul>
+<li>Spring Boot的特性（优点）有哪些？<ul>
+<li>使创建一个基于Spring的应用很简单</li>
+<li>Starter简化构建依赖配置</li>
+<li>自动配置</li>
+<li>零xml配置</li>
+</ul>
+</li>
+<li>感受Spring Boot带来的快感<ul>
+<li>十分钟使用Spring Boot搭一个SSM工程</li>
+<li><ul>
+<li>配置数据源</li>
+<li>配置MyBatis相关参数</li>
+<li>写业务代码</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对比：如果不使用Spring Boot，搭一个SSM工程需要怎么做？你需要多久？你是否能搭起来？<ol>
+<li>加入相关的jar包</li>
+<li>配置web.xml，加载Spring和Spring MVC</li>
+<li>配置数据库连接、配置Spring事务</li>
+<li>配置加载配置文件的读取，开启注解</li>
+<li>配置日志文件</li>
+<li>。。。<br>配置完成之后部署tomcat调试</li>
+<li>难点是什么？<ol>
+<li>包依赖</li>
+<li>bean配置</li>
+</ol>
+</li>
+<li>这些事是不是必须要做的呢？有没有自动化方案?</li>
+<li>Springboot中，这是是不是starter帮我们做了？</li>
+</ol>
+</li>
+</ul>
+<h1 id="Starter原理解密"><a href="#Starter原理解密" class="headerlink" title="Starter原理解密"></a>Starter原理解密</h1><ul>
+<li><p>Starter的作用：</p>
+<ul>
+<li>starter引入相关的jar包</li>
+<li>starter自动完成bean配置</li>
+</ul>
+</li>
+<li><p>疑问1：这些bean的依赖关系是如何自动处理的？</p>
+<ul>
+<li><p>首先明确一下spring配置bean的方式有几种？</p>
+<ul>
+<li>xml配置</li>
+<li>注解</li>
+<li>基于Java代码的方式（@Configuration+@Bean）</li>
+</ul>
+</li>
+<li><p>如：如果我们没有配置datasource，那mybatis会被加载吗？</p>
+</li>
+<li><p>自动配置–条件依赖注解：（通过这些条件依赖来说明定义，SpringBoot容器可以自动Bean的配置）</p>
+<ul>
+<li><p>@ConditionalOnClass、@ConditionalOnMissingClass</p>
+</li>
+<li><p>@ConditionalOnBean、@ConditionalOnMissingBean</p>
+</li>
+<li><p>@ConditionalOnProperty</p>
+</li>
+<li><p>@ConditionalOnResource</p>
+</li>
+<li><p>@ConditionalOnWebApplication、@ConditionOnNotWebApplication</p>
+</li>
+<li><p>@ConditionalOnExpression</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- @AutoConfigureAfter  @AutoConfigureBefore  @AutoConfigureOrder指定顺序</code></pre><ul>
+<li><p>疑问2：这些bean配置需要的参数是如何规定并获取的？</p>
+<ul>
+<li>如：配置datasource需要数据库连接参数，mybatis也有自己的配置参数，这些参数在编写的时候如果没有提示怎么办？</li>
+<li>找到jar包，找到META-INF目录，里面有个spring-configuration-metadata.json文件，这个文件就是记录配置参数的</li>
+</ul>
+</li>
+<li><p>疑问3：这些bean配置是如何被发现并加载的？</p>
+<ul>
+<li>SpringApplication构造方法里有一个setInitializers()初始化器和一个setListeners()监听器，它们会去加载spring-configuration-metadata.json里的对应参数，具体可以看getSpringFactoriesInstances()</li>
+</ul>
+</li>
+<li><p>思考：如果我们开发的一些通用组件，被很多项目使用，我们是不是可以制作一个starter，来简化使用？</p>
+</li>
+</ul>
+<h1 id="开发自己的Spring-Boot-Starter"><a href="#开发自己的Spring-Boot-Starter" class="headerlink" title="开发自己的Spring-Boot-Starter"></a>开发自己的Spring-Boot-Starter</h1><ul>
+<li><p>Starter是一个集成接合器，完成两件事</p>
+<ul>
+<li>引入相关的jar</li>
+<li>自动配置</li>
+</ul>
+</li>
+<li><p>Spring boot规范：</p>
+<ul>
+<li><p>start.jar完成引入相关的jar</p>
+</li>
+<li><p>autoConfigure.jar完成自动配置</p>
+<p><font color="red">也可以只用一个jar包</font></p>
+</li>
+</ul>
+</li>
+<li><p>Starter命名规范</p>
+<ul>
+<li>Spring提供的starter：<ul>
+<li>spring-boot-starter-xxx-x.y.z.jar</li>
+<li>spring-boot-xxx-autoconfigure-x.y.z.jar</li>
+</ul>
+</li>
+<li>第三方的starter：<ul>
+<li>xxx-spring-boot-starter-x.y.z.jar</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>动手制作一个第3方lib的starter</p>
+<ul>
+<li>一：准备第3方的jar</li>
+<li>二：制作starter<ul>
+<li>1建工程</li>
+<li>2引入spring-boot-start、spring-boot-autoconfigure、第三方jar</li>
+<li>3如需要生成配置元信息，加入spring-boot-configuration-processor依赖</li>
+<li>4编写自动配置类</li>
+<li>5配置发现配置文件：META-INF/spring.factories</li>
+<li>6供其他项目使用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>我的疑问：上面这个过程跟maven打包成一个jar包是一样的吗？不一样的话有什么区别？打包完了之后怎么使用？</p>
+</li>
+</ul>
+<p><img src="/.io//..%5Cimages%5C123.png" alt></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/01/11/%E4%BD%BF%E7%94%A8Hexo%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/11/%E4%BD%BF%E7%94%A8Hexo%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/" class="post-title-link" itemprop="url">使用Hexo创建自己的博客过程中遇到的一些坑</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-11 21:51:26" itemprop="dateCreated datePublished" datetime="2020-01-11T21:51:26+08:00">2020-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-19 17:27:55" itemprop="dateModified" datetime="2020-12-19T17:27:55+08:00">2020-12-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Hexo的详细教程可以参考中文官方文档：<a href="https://hexo.io/zh-cn/docs/，因为是翻译过来的，所以有些表述其实不是很清晰。以下是个人在使用过程中遇到的一些小坑，特此记录分享" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/，因为是翻译过来的，所以有些表述其实不是很清晰。以下是个人在使用过程中遇到的一些小坑，特此记录分享</a></p>
+<h1 id="第一个坑：Hexo安装完成后需要配置环境变量"><a href="#第一个坑：Hexo安装完成后需要配置环境变量" class="headerlink" title="第一个坑：Hexo安装完成后需要配置环境变量"></a>第一个坑：Hexo安装完成后需要配置环境变量</h1><p>Hexo安装完成后需要配置环境变量才能在dos窗口使用hexo命令，简单配置一下（跟配置jdk环境变量类似不懂问度娘）：</p>
+<ul>
+<li>配置环境变量：<code>E:\Github\hexo\node_modules\.bin</code></li>
+<li>当然，你的路径可能和我的不同。但是后面的一定是<code>\hexo\node_modules\.bin</code></li>
+<li>然后，重新打开一个命令行就可以执行<code>hexo -v</code>的命令查看hexo版本</li>
+</ul>
+<h1 id="第二个坑：Git安装可以选择自动配置环境变量"><a href="#第二个坑：Git安装可以选择自动配置环境变量" class="headerlink" title="第二个坑：Git安装可以选择自动配置环境变量"></a>第二个坑：Git安装可以选择自动配置环境变量</h1><p>安装的时候有个步骤选择“系统自带CMD：使用windows系统的命令行工具”，即选择第二个“use git from the windows command prompt”，就会自动帮你配置好环境变量不需要自己配置。</p>
+<h1 id="第三个坑：初始化根目录"><a href="#第三个坑：初始化根目录" class="headerlink" title="第三个坑：初始化根目录"></a>第三个坑：初始化根目录</h1><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;  #注意这个命令会在当前目录下创建folder目录，所以执行命令前要先切换到自己想创建目录的目录下，如：切换到D盘下执行  hexo init Hexo，那么会自动在D盘下创建Hexo目录</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+
+<h1 id="第四个坑：根目录下有个themes目录"><a href="#第四个坑：根目录下有个themes目录" class="headerlink" title="第四个坑：根目录下有个themes目录"></a>第四个坑：根目录下有个themes目录</h1><p>这个目录是专门用来放各种主题的，一般都是通过git下载，所以这里需要切换到themes目录下再进行下载，主题的选择需要到hexo主目录下的config.yml去设置，hexo主目录就是你执行命令<code>hexo init &lt;folder&gt;</code>得到的那个folder目录</p>
+<h1 id="第五个坑：配置文件有两种"><a href="#第五个坑：配置文件有两种" class="headerlink" title="第五个坑：配置文件有两种"></a>第五个坑：配置文件有两种</h1><p>我的理解是有站点配置文件和主题配置文件两种：</p>
+<ul>
+<li><p>站点配置文件在主目录下<em>config.yml，主要是有关站点的一些配置，如网站标题、副标题、网站主题选择等；</em></p>
+</li>
+<li><p>每种主题一般都有对应的配置文件，可以到themes选择对应的主题找到_config.yml进行配置，比如一种主题可能有多种风格，风格的配置就是在这里配。</p>
+</li>
+</ul>
+<h1 id="第六个坑：标签、关于、分类设置"><a href="#第六个坑：标签、关于、分类设置" class="headerlink" title="第六个坑：标签、关于、分类设置"></a>第六个坑：标签、关于、分类设置</h1><p>以标签为例：</p>
+<p>①执行命令：hexo new page “tags”，执行完之后可以到主目录的sources里看到tags目录</p>
+<p>②编辑tags目录下的index.md，编辑内容更改为：</p>
+<p>title: tags<br>date: yyyy-mm-dd 13:49:35  #title和date会自动生成，这里注意要多设置一个type，标签tags和分类categories需要设置一下，关于about不需要<br>type: “tags”</p>
+<p>③注意这里要设置type而已一定是tags，说设置layout:”tags”都是错了（忘记是在哪里看到的教程，坑！）<br>④到主题配置文件设置下菜单，启动需要的菜单<br>menu:<br>  home: / || home<br>  about: /about/ || user<br>  tags: /tags/ || tags<br>  categories: /categories/ || th<br>  archives: /archives/ || archive</p>
+<h1 id="第七个坑：部署到github"><a href="#第七个坑：部署到github" class="headerlink" title="第七个坑：部署到github"></a>第七个坑：部署到github</h1><p>这里我就简单说一下部署的主要流程：</p>
+<ol>
+<li>到github创建仓库R</li>
+<li>到hexo目录下的<code>_config.yml</code>设置deploy信息</li>
+<li>将hexo代码上传到R仓库</li>
+<li>部署到Github</li>
+</ol>
+<p>具体可参考：<a href="https://www.cnblogs.com/admol/p/admol.html" target="_blank" rel="noopener">https://www.cnblogs.com/admol/p/admol.html</a></p>
+<h1 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h1><p><img src="/2020/01/11/%E4%BD%BF%E7%94%A8Hexo%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/.%5C%E4%BD%BF%E7%94%A8Hexo%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%5C123.png" alt="123"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tank"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">Tank</p>
+  <div class="site-description" itemprop="description">Strong when strong, to strive, to seek, to find.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tank</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

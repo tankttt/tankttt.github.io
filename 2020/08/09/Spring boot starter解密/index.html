@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://tankttt.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Spring boot starter解密 # 课程内容大纲   starter让开发变得如此简单 starter原理解密 制作自己的starter  感受spring boot的简单易用 Spring Boot的特性（优点）有哪些？ 使创建一个基于Spring的应用很简单 Starter简化构建依赖配置 自动配置 零xml配置   感受Spring Boot带来的快感 十分钟使用Spring B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring boot starter解密">
+<meta property="og:url" content="https://tankttt.github.io/2020/08/09/Spring%20boot%20starter%E8%A7%A3%E5%AF%86/index.html">
+<meta property="og:site_name" content="Tank">
+<meta property="og:description" content="Spring boot starter解密 # 课程内容大纲   starter让开发变得如此简单 starter原理解密 制作自己的starter  感受spring boot的简单易用 Spring Boot的特性（优点）有哪些？ 使创建一个基于Spring的应用很简单 Starter简化构建依赖配置 自动配置 零xml配置   感受Spring Boot带来的快感 十分钟使用Spring B">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tankttt.github.io/.io//..%5Cimages%5C123.png">
+<meta property="article:published_time" content="2020-08-09T08:32:30.634Z">
+<meta property="article:modified_time" content="2020-08-09T08:43:32.963Z">
+<meta property="article:author" content="Tank">
+<meta property="article:tag" content="全栈  Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tankttt.github.io/.io//..%5Cimages%5C123.png">
+
+<link rel="canonical" href="https://tankttt.github.io/2020/08/09/Spring%20boot%20starter%E8%A7%A3%E5%AF%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Spring boot starter解密 | Tank</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tank</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Java, SpringBoot, SpringCloud, Design Pattern.</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/08/09/Spring%20boot%20starter%E8%A7%A3%E5%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Spring boot starter解密
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-09 16:32:30 / 修改时间：16:43:32" itemprop="dateCreated datePublished" datetime="2020-08-09T16:32:30+08:00">2020-08-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center><h1>Spring boot starter解密</h1></center>
+# 课程内容大纲
+
+<ul>
+<li>starter让开发变得如此简单</li>
+<li>starter原理解密</li>
+<li>制作自己的starter</li>
+</ul>
+<h1 id="感受spring-boot的简单易用"><a href="#感受spring-boot的简单易用" class="headerlink" title="感受spring boot的简单易用"></a>感受spring boot的简单易用</h1><ul>
+<li>Spring Boot的特性（优点）有哪些？<ul>
+<li>使创建一个基于Spring的应用很简单</li>
+<li>Starter简化构建依赖配置</li>
+<li>自动配置</li>
+<li>零xml配置</li>
+</ul>
+</li>
+<li>感受Spring Boot带来的快感<ul>
+<li>十分钟使用Spring Boot搭一个SSM工程</li>
+<li><ul>
+<li>配置数据源</li>
+<li>配置MyBatis相关参数</li>
+<li>写业务代码</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对比：如果不使用Spring Boot，搭一个SSM工程需要怎么做？你需要多久？你是否能搭起来？<ol>
+<li>加入相关的jar包</li>
+<li>配置web.xml，加载Spring和Spring MVC</li>
+<li>配置数据库连接、配置Spring事务</li>
+<li>配置加载配置文件的读取，开启注解</li>
+<li>配置日志文件</li>
+<li>。。。<br>配置完成之后部署tomcat调试</li>
+<li>难点是什么？<ol>
+<li>包依赖</li>
+<li>bean配置</li>
+</ol>
+</li>
+<li>这些事是不是必须要做的呢？有没有自动化方案?</li>
+<li>Springboot中，这是是不是starter帮我们做了？</li>
+</ol>
+</li>
+</ul>
+<h1 id="Starter原理解密"><a href="#Starter原理解密" class="headerlink" title="Starter原理解密"></a>Starter原理解密</h1><ul>
+<li><p>Starter的作用：</p>
+<ul>
+<li>starter引入相关的jar包</li>
+<li>starter自动完成bean配置</li>
+</ul>
+</li>
+<li><p>疑问1：这些bean的依赖关系是如何自动处理的？</p>
+<ul>
+<li><p>首先明确一下spring配置bean的方式有几种？</p>
+<ul>
+<li>xml配置</li>
+<li>注解</li>
+<li>基于Java代码的方式（@Configuration+@Bean）</li>
+</ul>
+</li>
+<li><p>如：如果我们没有配置datasource，那mybatis会被加载吗？</p>
+</li>
+<li><p>自动配置–条件依赖注解：（通过这些条件依赖来说明定义，SpringBoot容器可以自动Bean的配置）</p>
+<ul>
+<li><p>@ConditionalOnClass、@ConditionalOnMissingClass</p>
+</li>
+<li><p>@ConditionalOnBean、@ConditionalOnMissingBean</p>
+</li>
+<li><p>@ConditionalOnProperty</p>
+</li>
+<li><p>@ConditionalOnResource</p>
+</li>
+<li><p>@ConditionalOnWebApplication、@ConditionOnNotWebApplication</p>
+</li>
+<li><p>@ConditionalOnExpression</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- @AutoConfigureAfter  @AutoConfigureBefore  @AutoConfigureOrder指定顺序</code></pre><ul>
+<li><p>疑问2：这些bean配置需要的参数是如何规定并获取的？</p>
+<ul>
+<li>如：配置datasource需要数据库连接参数，mybatis也有自己的配置参数，这些参数在编写的时候如果没有提示怎么办？</li>
+<li>找到jar包，找到META-INF目录，里面有个spring-configuration-metadata.json文件，这个文件就是记录配置参数的</li>
+</ul>
+</li>
+<li><p>疑问3：这些bean配置是如何被发现并加载的？</p>
+<ul>
+<li>SpringApplication构造方法里有一个setInitializers()初始化器和一个setListeners()监听器，它们会去加载spring-configuration-metadata.json里的对应参数，具体可以看getSpringFactoriesInstances()</li>
+</ul>
+</li>
+<li><p>思考：如果我们开发的一些通用组件，被很多项目使用，我们是不是可以制作一个starter，来简化使用？</p>
+</li>
+</ul>
+<h1 id="开发自己的Spring-Boot-Starter"><a href="#开发自己的Spring-Boot-Starter" class="headerlink" title="开发自己的Spring-Boot-Starter"></a>开发自己的Spring-Boot-Starter</h1><ul>
+<li><p>Starter是一个集成接合器，完成两件事</p>
+<ul>
+<li>引入相关的jar</li>
+<li>自动配置</li>
+</ul>
+</li>
+<li><p>Spring boot规范：</p>
+<ul>
+<li><p>start.jar完成引入相关的jar</p>
+</li>
+<li><p>autoConfigure.jar完成自动配置</p>
+<p><font color="red">也可以只用一个jar包</font></p>
+</li>
+</ul>
+</li>
+<li><p>Starter命名规范</p>
+<ul>
+<li>Spring提供的starter：<ul>
+<li>spring-boot-starter-xxx-x.y.z.jar</li>
+<li>spring-boot-xxx-autoconfigure-x.y.z.jar</li>
+</ul>
+</li>
+<li>第三方的starter：<ul>
+<li>xxx-spring-boot-starter-x.y.z.jar</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>动手制作一个第3方lib的starter</p>
+<ul>
+<li>一：准备第3方的jar</li>
+<li>二：制作starter<ul>
+<li>1建工程</li>
+<li>2引入spring-boot-start、spring-boot-autoconfigure、第三方jar</li>
+<li>3如需要生成配置元信息，加入spring-boot-configuration-processor依赖</li>
+<li>4编写自动配置类</li>
+<li>5配置发现配置文件：META-INF/spring.factories</li>
+<li>6供其他项目使用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>我的疑问：上面这个过程跟maven打包成一个jar包是一样的吗？不一样的话有什么区别？打包完了之后怎么使用？</p>
+</li>
+</ul>
+<p><img src="/.io//..%5Cimages%5C123.png" alt></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/11/%E4%BD%BF%E7%94%A8Hexo%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/" rel="prev" title="使用Hexo创建自己的博客过程中遇到的一些坑">
+      <i class="fa fa-chevron-left"></i> 使用Hexo创建自己的博客过程中遇到的一些坑
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/19/1.3.2%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BBmap/" rel="next" title="1.3.2并发容器类map">
+      1.3.2并发容器类map <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Spring boot starter解密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#感受spring-boot的简单易用"><span class="nav-number">2.</span> <span class="nav-text">感受spring boot的简单易用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Starter原理解密"><span class="nav-number">3.</span> <span class="nav-text">Starter原理解密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发自己的Spring-Boot-Starter"><span class="nav-number">4.</span> <span class="nav-text">开发自己的Spring-Boot-Starter</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tank"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">Tank</p>
+  <div class="site-description" itemprop="description">Strong when strong, to strive, to seek, to find.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tank</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

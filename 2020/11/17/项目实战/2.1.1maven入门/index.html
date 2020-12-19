@@ -46,20 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="Strong when strong, to strive, to seek, to find.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://tankttt.github.io/tags/index.html">
+  <meta name="description" content="Maven入门  一、Maven介绍Maven是什么？ Maven是Apache软件基金会组织维护的一款自动化构建工具，专注服务于Java平台的项目构建和依赖管理。  项目构建 用Maven可以管理项目开发的整个生命周期，主要包括如下几个阶段： 清理–编译–测试–报告–打包–安装–部署  依赖管理 管理项目所依赖的所有Jar文件   Maven能干什么？  添加三方Jar包 管理Jar包之间的依赖">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目实战&#x2F;2.1.1maven入门">
+<meta property="og:url" content="https://tankttt.github.io/2020/11/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.1maven%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="Tank">
-<meta property="og:description" content="Strong when strong, to strive, to seek, to find.">
+<meta property="og:description" content="Maven入门  一、Maven介绍Maven是什么？ Maven是Apache软件基金会组织维护的一款自动化构建工具，专注服务于Java平台的项目构建和依赖管理。  项目构建 用Maven可以管理项目开发的整个生命周期，主要包括如下几个阶段： 清理–编译–测试–报告–打包–安装–部署  依赖管理 管理项目所依赖的所有Jar文件   Maven能干什么？  添加三方Jar包 管理Jar包之间的依赖">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-01-11T05:49:35.000Z">
-<meta property="article:modified_time" content="2020-01-11T08:51:41.095Z">
+<meta property="article:published_time" content="2020-11-17T14:54:55.428Z">
+<meta property="article:modified_time" content="2020-11-17T15:11:20.948Z">
 <meta property="article:author" content="Tank">
 <meta property="article:tag" content="全栈  Java">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://tankttt.github.io/tags/">
+<link rel="canonical" href="https://tankttt.github.io/2020/11/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.1maven%E5%85%A5%E9%97%A8/">
 
 
 <script id="page-configurations">
@@ -67,12 +67,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>tags | Tank
-  </title>
+  <title>项目实战/2.1.1maven入门 | Tank</title>
   
 
 
@@ -178,52 +177,117 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/11/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.1maven%E5%85%A5%E9%97%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          项目实战/2.1.1maven入门
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">tags
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2020-11-17 22:54:55 / 修改时间：23:11:20" itemprop="dateCreated datePublished" datetime="2020-11-17T22:54:55+08:00">2020-11-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center><h1>Maven入门</h1></center>
+
+<h1 id="一、Maven介绍"><a href="#一、Maven介绍" class="headerlink" title="一、Maven介绍"></a><font color="#0A77B9">一、Maven介绍</font></h1><p>Maven是什么？</p>
+<p>Maven是Apache软件基金会组织维护的一款自动化构建工具，专注服务于Java平台的<font color="red">项目构建</font>和<font color="red">依赖管理</font>。</p>
+<ul>
+<li><p>项目构建</p>
+<p>用Maven可以管理项目开发的整个生命周期，主要包括如下几个阶段：</p>
+<p>清理–编译–测试–报告–打包–安装–部署</p>
+</li>
+<li><p>依赖管理</p>
+<p>管理项目所依赖的所有Jar文件</p>
+</li>
+</ul>
+<p>Maven能干什么？</p>
+<ul>
+<li>添加三方Jar包</li>
+<li>管理Jar包之间的依赖关系</li>
+<li>获取第三方jar包</li>
+<li>将项目拆分成多个工程模块</li>
+</ul>
+<h1 id="二、Maven基础案例"><a href="#二、Maven基础案例" class="headerlink" title="二、Maven基础案例"></a><font color="#0A77B9">二、Maven基础案例</font></h1><ol>
+<li><p>archetype:generate（交互模式）</p>
+</li>
+<li><p>archetype:generate（非交互模式）</p>
+<p>-DgroupId=组织名，公司网址的反写+项目名</p>
+<p>-DartifactId=项目名-模块名</p>
+<p>-Dversion=版本号</p>
+<p>-Dpackage=包名</p>
+<p>-DarchetypeArtifactId=maven-archetype-webapp</p>
+<p>-DinteractiveMode=false</p>
+</li>
+<li><p>通过eclipse创建maven项目</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/17/2.2.1Netty%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B/" rel="prev" title="2.2.1Netty线程模型">
+      <i class="fa fa-chevron-left"></i> 2.2.1Netty线程模型
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.2maven%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/" rel="next" title="项目实战/2.1.2maven核心概念">
+      项目实战/2.1.2maven核心概念 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              暂无标签
-            </div>
-            <div class="tag-cloud-tags">
-              
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
   </div>
 
 
@@ -275,6 +339,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Maven入门</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Maven介绍"><span class="nav-number">2.</span> <span class="nav-text">一、Maven介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Maven基础案例"><span class="nav-number">3.</span> <span class="nav-text">二、Maven基础案例</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -46,20 +46,22 @@
   };
 </script>
 
-  <meta name="description" content="Strong when strong, to strive, to seek, to find.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://tankttt.github.io/tags/index.html">
+  <meta name="description" content="NIO网络编程 # 一、Netty简介  Netty是一个高性能、高可扩展性的异步事件驱动的网络应用程序框架，它极大地简化了TCP和UDP客户端和服务器开发等网络编程。 Netty重要的四个内容：  Reactor线程模型：一种高性能的多线程程序设计思路 Netty中自己定义的Channel概念：增强版的通道概念 ChannelPipeline职责链设计模式：事件处理机制 内存管理：增强的Byte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.2.1Netty线程模型">
+<meta property="og:url" content="https://tankttt.github.io/2020/10/17/2.2.1Netty%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Tank">
-<meta property="og:description" content="Strong when strong, to strive, to seek, to find.">
+<meta property="og:description" content="NIO网络编程 # 一、Netty简介  Netty是一个高性能、高可扩展性的异步事件驱动的网络应用程序框架，它极大地简化了TCP和UDP客户端和服务器开发等网络编程。 Netty重要的四个内容：  Reactor线程模型：一种高性能的多线程程序设计思路 Netty中自己定义的Channel概念：增强版的通道概念 ChannelPipeline职责链设计模式：事件处理机制 内存管理：增强的Byte">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-01-11T05:49:35.000Z">
-<meta property="article:modified_time" content="2020-01-11T08:51:41.095Z">
+<meta property="og:image" content="https://tankttt.github.io/2020/10/17/2.2/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1602946126531.png">
+<meta property="article:published_time" content="2020-10-17T14:38:30.640Z">
+<meta property="article:modified_time" content="2020-10-17T15:12:14.461Z">
 <meta property="article:author" content="Tank">
 <meta property="article:tag" content="全栈  Java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tankttt.github.io/2020/10/17/2.2/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1602946126531.png">
 
-<link rel="canonical" href="https://tankttt.github.io/tags/">
+<link rel="canonical" href="https://tankttt.github.io/2020/10/17/2.2.1Netty%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B/">
 
 
 <script id="page-configurations">
@@ -67,12 +69,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>tags | Tank
-  </title>
+  <title>2.2.1Netty线程模型 | Tank</title>
   
 
 
@@ -178,52 +179,101 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/10/17/2.2.1Netty%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2.2.1Netty线程模型
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">tags
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2020-10-17 22:38:30 / 修改时间：23:12:14" itemprop="dateCreated datePublished" datetime="2020-10-17T22:38:30+08:00">2020-10-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center><h1>NIO网络编程</h1></center>
+# <font color="#0A77B9">一、Netty简介</font>
+
+<p>Netty是一个高性能、高可扩展性的异步事件驱动的<font color="red">网络应用程序框架</font>，它极大地简化了TCP和UDP客户端和服务器开发等网络编程。</p>
+<p><font color="#0A77B9">Netty重要的四个内容：</font></p>
+<ol>
+<li>Reactor线程模型：一种高性能的多线程程序设计思路</li>
+<li>Netty中自己定义的Channel概念：增强版的通道概念</li>
+<li>ChannelPipeline职责链设计模式：事件处理机制</li>
+<li>内存管理：增强的ByteBuf缓冲区</li>
+</ol>
+<h1 id="二、Netty整体结构图"><a href="#二、Netty整体结构图" class="headerlink" title="二、Netty整体结构图"></a><font color="#0A77B9">二、Netty整体结构图</font></h1><p><img src="/2020/10/17/2.2/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1602946126531.png" alt="1602946126531"></p>
+<p>图片来自官网，可以看出包含三大块</p>
+<ol>
+<li>支持Socket等多种传输方式；</li>
+<li>提供了多种协议的编解码实现；</li>
+<li>核心设计包含<font color="#0A77B9">事件处理模型、API的使用、ByteBuffer的增强</font></li>
+</ol>
+<h1 id="三、Netty线程模型"><a href="#三、Netty线程模型" class="headerlink" title="三、Netty线程模型"></a><font color="#0A77B9">三、Netty线程模型</font></h1>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/07/2.1.3NIO%E9%9D%9E%E9%98%BB%E5%A1%9E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E7%90%86%E5%BF%B5/" rel="prev" title="2.1.3NIO非阻塞网络编程三大核心理念">
+      <i class="fa fa-chevron-left"></i> 2.1.3NIO非阻塞网络编程三大核心理念
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.1maven%E5%85%A5%E9%97%A8/" rel="next" title="项目实战/2.1.1maven入门">
+      项目实战/2.1.1maven入门 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              暂无标签
-            </div>
-            <div class="tag-cloud-tags">
-              
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
   </div>
 
 
@@ -275,6 +325,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">NIO网络编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Netty整体结构图"><span class="nav-number">2.</span> <span class="nav-text">二、Netty整体结构图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Netty线程模型"><span class="nav-number">3.</span> <span class="nav-text">三、Netty线程模型</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

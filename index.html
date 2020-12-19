@@ -184,7 +184,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/01/01/my-blog/">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/12/19/LeetCode%E5%A5%8B%E6%96%97%E7%AF%87/01_LeetCode%20%E7%83%AD%E9%A2%98%20HOT%20100/%E9%93%BE%E8%A1%A8%E7%AF%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -198,7 +198,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/01/my-blog/" class="post-title-link" itemprop="url">my blog</a>
+            <a href="/2020/12/19/LeetCode%E5%A5%8B%E6%96%97%E7%AF%87/01_LeetCode%20%E7%83%AD%E9%A2%98%20HOT%20100/%E9%93%BE%E8%A1%A8%E7%AF%87/" class="post-title-link" itemprop="url">LeetCode奋斗篇/01_LeetCode 热题 HOT 100/链表篇</a>
         </h1>
 
         <div class="post-meta">
@@ -207,16 +207,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-01-01 18:10:52" itemprop="dateCreated datePublished" datetime="2020-01-01T18:10:52+08:00">2020-01-01</time>
+              <time title="创建时间：2020-12-19 15:36:32 / 修改时间：16:52:32" itemprop="dateCreated datePublished" datetime="2020-12-19T15:36:32+08:00">2020-12-19</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-11 16:51:41" itemprop="dateModified" datetime="2020-01-11T16:51:41+08:00">2020-01-11</time>
-              </span>
 
           
 
@@ -229,13 +223,195 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>今天来说一下Vue的生命周期</p>
-<p>说到Vue的生命周期，就像官网所说：你不需要立马弄明白所有的东西，不过随着你的不断学习和使用，它的参考价值会越来越高。所以还是很有必要深入了解一下Vue的生命周期，我们先来看一下官网给出的图片</p>
-<p><img src="C:%5CUsers%5Czhan%5CDesktop%5Clifecycle.png" alt="lifecycle"></p>
-<p>乍一看好像没什么，细看发现看不太懂，没有关系，回到前线，我们来运行一下代码</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>Vue生命周期<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">test</span>&gt;</span><span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"aaa"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"myp"</span>&gt;</span>A组件<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"destroy"</span>&gt;</span>destroy<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"msg"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">p</span>&gt;</span>msg:&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/vue/2.4.2/vue.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">		<span class="comment">//生命周期：初始化阶段 运行中阶段 销毁阶段</span></span></span><br><span class="line"><span class="actionscript">		Vue.component(<span class="string">"test"</span>, &#123;</span></span><br><span class="line"><span class="actionscript">			template: <span class="string">"#aaa"</span>,</span></span><br><span class="line"><span class="actionscript">			data: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">				<span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">					msg: <span class="string">'hello'</span></span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;,</span><br><span class="line"><span class="actionscript">			timer: <span class="literal">null</span>,</span></span><br><span class="line">			methods: &#123;</span><br><span class="line"><span class="actionscript">				destroy: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">					<span class="keyword">this</span>.$destroy(); <span class="comment">//</span></span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;,</span><br><span class="line"><span class="actionscript">			beforeCreate: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===beforeCreate执行==='</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'beforeCreate:刚刚new Vue()之后，这个时候，数据还没有挂载呢，只是一个空壳'</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'this.msg:'</span> + <span class="keyword">this</span>.msg); <span class="comment">//undefined</span></span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementsByClassName(<span class="string">"myp"</span>)[<span class="number">0</span>]); <span class="comment">//undefined</span></span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===beforeCreate结束==='</span>);</span></span><br><span class="line">			&#125;,</span><br><span class="line"><span class="actionscript">			created: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===created执行==='</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'created:这个时候已经可以使用到数据，也可以更改数据,在这里更改数据不会触发updated函数'</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'更改前this.msg:'</span> + <span class="keyword">this</span>.msg); </span></span><br><span class="line"><span class="actionscript">				<span class="keyword">this</span>.msg += <span class="string">'!!!'</span>;</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'更改后this.msg:'</span> + <span class="keyword">this</span>.msg); </span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'在这里可以在渲染前倒数第二次更改数据的机会，不会触发其他的钩子函数，一般可以在这里做初始数据的获取'</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'接下来开始找实例或者组件对应的模板，编译模板为虚拟dom放入到render函数中准备渲染'</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===created结束==='</span>);</span></span><br><span class="line">			&#125;,</span><br><span class="line"><span class="actionscript">			beforeMount: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===beforeMount执行==='</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'beforeMount：虚拟dom已经创建完成，马上就要渲染,在这里也可以更改数据，不会触发updated'</span>)</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'更改前this.msg:'</span> + <span class="keyword">this</span>.msg);</span></span><br><span class="line"><span class="actionscript">				<span class="keyword">this</span>.msg += <span class="string">'@Longsys'</span>;</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'更改后this.msg:'</span> + <span class="keyword">this</span>.msg); </span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'在这里可以在渲染前最后一次更改数据的机会，不会触发其他的钩子函数，一般可以在这里做初始数据的获取'</span>)</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementsByClassName(<span class="string">"myp"</span>)[<span class="number">0</span>]) <span class="comment">//undefined</span></span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'接下来开始render，渲染出真实dom'</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===beforeMount结束==='</span>);</span></span><br><span class="line">			&#125;,</span><br><span class="line"><span class="actionscript">			mounted: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===mounted执行==='</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'mounted：此时，组件已经出现在页面中，数据、真实dom都已经处理好了,事件都已经挂载好了'</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementsByClassName(<span class="string">"myp"</span>)[<span class="number">0</span>]);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'可以在这里操作真实dom等事情...'</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===mounted结束==='</span>);</span></span><br><span class="line">			&#125;,</span><br><span class="line"><span class="actionscript">			beforeUpdate: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===beforeUpdate执行==='</span>);</span></span><br><span class="line"><span class="actionscript">				<span class="comment">//这里不能更改数据，否则会陷入死循环</span></span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'beforeUpdate:重新渲染之前触发'</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'然后vue的虚拟dom机制会重新构建虚拟dom与上一次的虚拟dom树利用diff算法进行对比之后重新渲染'</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===beforeUpdate结束==='</span>);</span></span><br><span class="line">			&#125;,</span><br><span class="line"><span class="actionscript">			updated: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===updated执行==='</span>);</span></span><br><span class="line"><span class="actionscript">				<span class="comment">//这里不能更改数据，否则会陷入死循环</span></span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'updated:数据已经更改完成，dom也重新render完成'</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===updated结束==='</span>);</span></span><br><span class="line">			&#125;,</span><br><span class="line"><span class="actionscript">			beforeDestroy: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===beforeDestory执行==='</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'beforeDestory:销毁前执行（$destroy方法被调用的时候就会执行）,一般在这里善后:清除计时器、清除非指令绑定的事件等等...'</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===beforeDestory结束==='</span>);</span></span><br><span class="line">			&#125;,</span><br><span class="line"><span class="actionscript">			destroyed: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===destroyed执行==='</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'destroyed:组件的数据绑定、监听...都去掉了,只剩下dom空壳，完成后无法再进行其他操作，这里也可以善后'</span>);</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(<span class="string">'===destroyed结束==='</span>);</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line"><span class="actionscript">		<span class="keyword">new</span> Vue(&#123;&#125;).$mount(<span class="string">'#app'</span>)</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <center><h1>链表篇</h1></center>
+# 简单_[21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 
-<p>结果如图所示：</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>将两个升序链表合并为一个新的 <strong>升序</strong> 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4</span><br><span class="line">输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</span><br></pre></td></tr></table></figure>
+
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="方法一：递归"><a href="#方法一：递归" class="headerlink" title="方法一：递归"></a>方法一：递归</h3><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>我们可以如下递归地定义两个链表里的 <code>merge</code> 操作（忽略边界情况，比如空链表等）：</p>
+<p>$$ \left{<br>\begin{aligned}<br>list1[0]+merge(list1[1:],list2)                      \ list1[0]&lt;list2[0]\<br>list2[0]+merge(list1,list2[1:])                      \ otherwise<br>\end{aligned}<br>\right.$$</p>
+<p>也就是说，两个链表头部值较小的一个节点与剩下元素的 <code>merge</code> 操作结果合并。</p>
+<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><p>我们直接将以上递归过程建模，同时需要考虑边界情况。</p>
+<p>如果 <code>l1</code> 或者 <code>l2</code> 一开始就是空链表 ，那么没有任何操作需要合并，所以我们只需要返回非空链表。否则，我们要判断 <code>l1</code> 和 <code>l2</code> 哪一个链表的头节点的值更小，然后递归地决定下一个添加到结果里的节点。如果两个链表有一个为空，递归结束。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">mergeTwoLists</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l1 == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> l2;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (l2 == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (l1.val &lt; l2.val) &#123;</span><br><span class="line">            l1.next = mergeTwoLists(l1.next, l2);</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            l2.next = mergeTwoLists(l1, l2.next);</span><br><span class="line">            <span class="keyword">return</span> l2;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><ul>
+<li>时间复杂度：<em>O(n + m)*，其中 *n</em> 和 <em>m</em> 分别为两个链表的长度。因为每次调用递归都会去掉 <code>l1</code> 或者<code>l2</code> 的头节点（直到至少有一个链表为空），函数 <code>mergeTwoList</code> 至多只会递归调用每个节点一次。因此，时间复杂度取决于合并后的链表长度，即 <em>O(n+m)</em>。</li>
+</ul>
+<ul>
+<li>空间复杂度：<em>O(n + m)*，其中 *n</em> 和 <em>m</em> 分别为两个链表的长度。递归调用 <code>mergeTwoLists</code> 函数时需要消耗栈空间，栈空间的大小取决于递归调用的深度。结束递归调用时 <code>mergeTwoLists</code> 函数最多调用 <em>n+m</em> 次，因此空间复杂度为 <em>O(n+m)</em>。</li>
+</ul>
+<h3 id="方法二：迭代"><a href="#方法二：迭代" class="headerlink" title="方法二：迭代"></a>方法二：迭代</h3><h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><p>我们可以用迭代的方法来实现上述算法。当 <code>l1</code> 和 <code>l2</code> 都不是空链表时，判断 <code>l1</code> 和 <code>l2</code> 哪一个链表的头节点的值更小，将较小值的节点添加到结果里，当一个节点被添加到结果里之后，将对应链表中的节点向后移一位。</p>
+<h4 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h4><p>首先，我们设定一个哨兵节点 <code>prehead</code> ，这可以在最后让我们比较容易地返回合并后的链表。我们维护一个 <code>prev</code> 指针，我们需要做的是调整它的 <code>next</code> 指针。然后，我们重复以下过程，直到 <code>l1</code> 或者 <code>l2</code> 指向了 <code>null</code> ：如果 <code>l1</code> 当前节点的值小于等于 <code>l2</code> ，我们就把 <code>l1</code> 当前的节点接在 <code>prev</code> 节点的后面同时将 <code>l1</code> 指针往后移一位。否则，我们对 <code>l2</code> 做同样的操作。不管我们将哪一个元素接在了后面，我们都需要把 <code>prev</code> 向后移一位。</p>
+<p>在循环终止的时候， <code>l1</code> 和 <code>l2</code> 至多有一个是非空的。由于输入的两个链表都是有序的，所以不管哪个链表是非空的，它包含的所有元素都比前面已经合并链表中的所有元素都要大。这意味着我们只需要简单地将非空链表接在合并链表的后面，并返回合并链表即可。</p>
+<p><a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/he-bing-liang-ge-you-xu-lian-biao-by-leetcode-solu/" target="_blank" rel="noopener">下图展示了 <code>1-&gt;4-&gt;5</code> 和 <code>1-&gt;2-&gt;3-&gt;6</code> 两个链表迭代合并的过程</a></p>
+<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">mergeTwoLists</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        ListNode prehead = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        ListNode prev = prehead;</span><br><span class="line">        <span class="keyword">while</span> (l1 != <span class="keyword">null</span> &amp;&amp; l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (l1.val &lt;= l2.val) &#123;</span><br><span class="line">                prev.next = l1;</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                prev.next = l2;</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">            &#125;</span><br><span class="line">            prev = prev.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可</span></span><br><span class="line">        prev.next = l1 == <span class="keyword">null</span> ? l2 : l1;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> prehead.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><ul>
+<li>时间复杂度：<em>O(n + m)*，其中 *n</em> 和 <em>m</em> 分别为两个链表的长度。因为每次循环迭代中，`l1 和 l2 只有一个元素会被放进合并链表中， 因此 while 循环的次数不会超过两个链表的长度之和。所有其他操作的时间复杂度都是常数级别的，因此总的时间复杂度为 O(n+m)O(n+m)。</li>
+</ul>
+<ul>
+<li>空间复杂度：O(1)O(1) 。我们只需要常数的空间存放若干变量。</li>
+</ul>
+<h1 id="简单-141-环形链表"><a href="#简单-141-环形链表" class="headerlink" title="简单_141. 环形链表"></a>简单_<a href="https://leetcode-cn.com/problems/linked-list-cycle/" target="_blank" rel="noopener">141. 环形链表</a></h1><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个链表，判断链表中是否有环。</p>
+<p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。<strong>注意：pos 不作为参数进行传递</strong>，仅仅是为了标识链表的实际情况。</p>
+<p>如果链表中存在环，则返回 true 。 否则，返回 false 。</p>
+<p><strong>进阶：</strong></p>
+<p>你能用 O(1)（即，常量）内存解决此问题吗？</p>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head &#x3D; [3,2,0,-4], pos &#x3D; 1</span><br><span class="line">输出：true</span><br><span class="line">解释：链表中有一个环，其尾部连接到第二个节点。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head &#x3D; [1,2], pos &#x3D; 0</span><br><span class="line">输出：true</span><br><span class="line">解释：链表中有一个环，其尾部连接到第一个节点。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head &#x3D; [1], pos &#x3D; -1</span><br><span class="line">输出：false</span><br><span class="line">解释：链表中没有环。</span><br></pre></td></tr></table></figure>
+
+<h2 id="解法-1"><a href="#解法-1" class="headerlink" title="解法"></a>解法</h2><h3 id="方法一：哈希表"><a href="#方法一：哈希表" class="headerlink" title="方法一：哈希表"></a>方法一：哈希表</h3><h4 id="思路与算法"><a href="#思路与算法" class="headerlink" title="思路与算法"></a>思路与算法</h4><p>最容易想到的方法是遍历所有节点，每次遍历到一个节点时，判断该节点此前是否被访问过。</p>
+<p>具体地，我们可以使用哈希表来存储所有已经访问过的节点。每次我们到达一个节点，如果该节点已经存在于哈希表中，则说明该链表是环形链表，否则就将该节点加入哈希表中。重复这一过程，直到我们遍历完整个链表即可。</p>
+<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        Set&lt;ListNode&gt; seen = <span class="keyword">new</span> HashSet&lt;ListNode&gt;();</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!seen.add(head)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><ul>
+<li>时间复杂度：<em>O(N)*，其中 *N</em> 是链表中的节点数。最坏情况下我们需要遍历每个节点一次。</li>
+</ul>
+<ul>
+<li>空间复杂度：<em>O(N)*，其中 *N</em> 是链表中的节点数。主要为哈希表的开销，最坏情况下我们需要将每个节点插入到哈希表中一次。</li>
+</ul>
+<h3 id="方法二：快慢指针"><a href="#方法二：快慢指针" class="headerlink" title="方法二：快慢指针"></a>方法二：快慢指针</h3><h4 id="思路与算法-1"><a href="#思路与算法-1" class="headerlink" title="思路与算法"></a>思路与算法</h4><p>本方法需要读者对「Floyd 判圈算法」（又称龟兔赛跑算法）有所了解。</p>
+<p>假想「乌龟」和「兔子」在链表上移动，「兔子」跑得快，「乌龟」跑得慢。当「乌龟」和「兔子」从链表上的同一个节点开始移动时，如果该链表中没有环，那么「兔子」将一直处于「乌龟」的前方；如果该链表中有环，那么「兔子」会先于「乌龟」进入环，并且一直在环内移动。等到「乌龟」进入环时，由于「兔子」的速度快，它一定会在某个时刻与乌龟相遇，即套了「乌龟」若干圈。</p>
+<p>我们可以根据上述思路来解决本题。具体地，我们定义两个指针，一快一满。慢指针每次只移动一步，而快指针每次移动两步。初始时，慢指针在位置 head，而快指针在位置 head.next。这样一来，如果在移动的过程中，快指针反过来追上慢指针，就说明该链表为环形链表。否则快指针将到达链表尾部，该链表不为环形链表。</p>
+<h4 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h4><p>为什么我们要规定初始时慢指针在位置 <code>head</code>，快指针在位置 <code>head.next</code>，而不是两个指针都在位置 <code>head</code>（即与「乌龟」和「兔子」中的叙述相同）？</p>
+<p>观察下面的代码，我们使用的是 <code>while</code> 循环，循环条件先于循环体。由于循环条件一定是判断快慢指针是否重合，如果我们将两个指针初始都置于 <code>head</code>，那么 <code>while</code> 循环就不会执行。因此，我们可以假想一个在 <code>head</code> 之前的虚拟节点，慢指针从虚拟节点移动一步到达 <code>head</code>，快指针从虚拟节点移动两步到达 <code>head.next</code>，这样我们就可以使用 <code>while</code> 循环了。</p>
+<p>当然，我们也可以使用 <code>do-while</code> 循环。此时，我们就可以把快慢指针的初始值都置为 <code>head</code>。</p>
+<h4 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        ListNode fast = head.next;</span><br><span class="line">        <span class="keyword">while</span> (slow != fast) &#123;</span><br><span class="line">            <span class="keyword">if</span> (fast == <span class="keyword">null</span> || fast.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="复杂度分析-3"><a href="#复杂度分析-3" class="headerlink" title="复杂度分析"></a><strong>复杂度分析</strong></h4><ul>
+<li><p>时间复杂度：<em>O(N)*，其中 *N</em> 是链表中的节点数。</p>
+<ul>
+<li>当链表中不存在环时，快指针将先于慢指针到达链表尾部，链表中每个节点至多被访问两次。</li>
+<li>当链表中存在环时，每一轮移动后，快慢指针的距离将减小一。而初始距离为环的长度，因此至多移动 <em>N</em> 轮。</li>
+</ul>
+</li>
+<li><p>空间复杂度：<em>O(1)</em>。我们只使用了两个指针的额外空间。</p>
+</li>
+</ul>
+<h1 id="简单-160-相交链表"><a href="#简单-160-相交链表" class="headerlink" title="简单_160. 相交链表"></a>简单_<a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/" target="_blank" rel="noopener">160. 相交链表</a></h1><h2 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h2><p>编写一个程序，找到两个单链表相交的起始节点。</p>
+<p>如下面的两个链表<strong>：</strong></p>
+<p><img src="/.io//160_statement.png" alt="160_statement"></p>
+<p>在节点 c1 开始相交。</p>
+<h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h2><p><strong>示例 1：</strong></p>
+<p><img src="/.io//160_example_1.png" alt="160_example_1"></p>
+<p>输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3<br>输出：Reference of the node with value = 8<br>输入解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。</p>
+<p><strong>示例 2：</strong></p>
+<p><img src="/.io//160_example_2.png" alt="160_example_2"></p>
+<p>输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1<br>输出：Reference of the node with value = 2<br>输入解释：相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。</p>
+<p><strong>示例 3：</strong></p>
+<p><img src="/.io//160_example_3.png" alt="160_example_3"></p>
+<p>输入：intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2<br>输出：null<br>输入解释：从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。<br>解释：这两个链表不相交，因此返回 null。</p>
+<p><strong>注意：</strong></p>
+<p>如果两个链表没有交点，返回 <code>null</code>.<br>在返回结果后，两个链表仍须保持原有的结构。<br>可假定整个链表结构中没有循环。<br>程序尽量满足 <em>O(n)</em> 时间复杂度，且仅用 <em>O(1)</em> 内存</p>
+<h2 id="解法-2"><a href="#解法-2" class="headerlink" title="解法"></a>解法</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><h4 id="思路与算法-2"><a href="#思路与算法-2" class="headerlink" title="思路与算法"></a>思路与算法</h4><p>对链表A中的每一个结点 a_i<em>a<strong>i<em>，遍历整个链表 <code>B</code> 并检查链表 <code>B</code> 中是否存在结点和 a_i</em>a</strong>i</em> 相同。</p>
+<h4 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123;</span></span><br><span class="line"><span class="comment"> *         val = x;</span></span><br><span class="line"><span class="comment"> *         next = null;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">getIntersectionNode</span><span class="params">(ListNode headA, ListNode headB)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (headA == <span class="keyword">null</span> || headB == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        ListNode pA = headA, pB = headB;</span><br><span class="line">        <span class="keyword">while</span> (pA != pB) &#123;</span><br><span class="line">            pA = pA == <span class="keyword">null</span> ? headB : pA.next;</span><br><span class="line">            pB = pB == <span class="keyword">null</span> ? headA : pB.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pA;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="复杂度分析-4"><a href="#复杂度分析-4" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h1 id="统一来源"><a href="#统一来源" class="headerlink" title="统一来源"></a>统一来源</h1><p>作者：LeetCode-Solution<br>链接：<a href="https://leetcode-cn.com" target="_blank" rel="noopener">https://leetcode-cn.com</a><br>来源：力扣（LeetCode）<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h1 id="统一格式"><a href="#统一格式" class="headerlink" title="统一格式"></a>统一格式</h1><h2 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h2><h2 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h2><h2 id="解法-3"><a href="#解法-3" class="headerlink" title="解法"></a>解法</h2><h3 id="方法一-1"><a href="#方法一-1" class="headerlink" title="方法一"></a>方法一</h3><h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><h4 id="算法-2"><a href="#算法-2" class="headerlink" title="算法"></a>算法</h4><h4 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h4><h4 id="复杂度分析-5"><a href="#复杂度分析-5" class="headerlink" title="复杂度分析"></a>复杂度分析</h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/12/19/LeetCode%E5%A5%8B%E6%96%97%E7%AF%87/01_LeetCode%20%E7%83%AD%E9%A2%98%20HOT%20100/01_%E9%93%BE%E8%A1%A8%E7%AF%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/19/LeetCode%E5%A5%8B%E6%96%97%E7%AF%87/01_LeetCode%20%E7%83%AD%E9%A2%98%20HOT%20100/01_%E9%93%BE%E8%A1%A8%E7%AF%87/" class="post-title-link" itemprop="url">LeetCode奋斗篇/01_LeetCode 热题 HOT 100/01_链表篇</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-19 15:24:08" itemprop="dateCreated datePublished" datetime="2020-12-19T15:24:08+08:00">2020-12-19</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><h1>链表篇</h1></center>
+
+<h1 id="简单-21-合并两个有序链表"><a href="#简单-21-合并两个有序链表" class="headerlink" title="简单_21. 合并两个有序链表"></a>简单_<a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/" target="_blank" rel="noopener">21. 合并两个有序链表</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>将两个升序链表合并为一个新的 <strong>升序</strong> 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4</span><br><span class="line">输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</span><br></pre></td></tr></table></figure>
+
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="方法一：递归"><a href="#方法一：递归" class="headerlink" title="方法一：递归"></a>方法一：递归</h3><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>我们可以如下递归地定义两个链表里的 merge 操作（忽略边界情况，比如空链表等）：</p>
+<p>\left{ \begin{array}{ll} list1[0] + merge(list1[1:], list2) &amp; list1[0] &lt; list2[0] \ list2[0] + merge(list1, list2[1:]) &amp; otherwise \end{array} \right.<br>{<br>list1[0]+merge(list1[1:],list2)<br>list2[0]+merge(list1,list2[1:])</p>
+<p>list1[0]&lt;list2[0]<br>otherwise</p>
+<p>也就是说，两个链表头部值较小的一个节点与剩下元素的 merge 操作结果合并。</p>
+<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><p>我们直接将以上递归过程建模，同时需要考虑边界情况。</p>
+<p>如果 l1 或者 l2 一开始就是空链表 ，那么没有任何操作需要合并，所以我们只需要返回非空链表。否则，我们要判断 l1 和 l2 哪一个链表的头节点的值更小，然后递归地决定下一个添加到结果里的节点。如果两个链表有一个为空，递归结束。</p>
+<p>JavaPythonJavaScriptC++</p>
+<p>class Solution {<br>    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {<br>        if (l1 == null) {<br>            return l2;<br>        } else if (l2 == null) {<br>            return l1;<br>        } else if (l1.val &lt; l2.val) {<br>            l1.next = mergeTwoLists(l1.next, l2);<br>            return l1;<br>        } else {<br>            l2.next = mergeTwoLists(l1, l2.next);<br>            return l2;<br>        }</p>
+<pre><code>}</code></pre><p>}</p>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>时间复杂度：O(n + m)O(n+m)，其中 nn 和 mm 分别为两个链表的长度。因为每次调用递归都会去掉 l1 或者 l2 的头节点（直到至少有一个链表为空），函数 mergeTwoList 至多只会递归调用每个节点一次。因此，时间复杂度取决于合并后的链表长度，即 O(n+m)O(n+m)。</p>
+<p>空间复杂度：O(n + m)O(n+m)，其中 nn 和 mm 分别为两个链表的长度。递归调用 mergeTwoLists 函数时需要消耗栈空间，栈空间的大小取决于递归调用的深度。结束递归调用时 mergeTwoLists 函数最多调用 n+mn+m 次，因此空间复杂度为 O(n+m)O(n+m)。</p>
+<h3 id="方法二：迭代"><a href="#方法二：迭代" class="headerlink" title="方法二：迭代"></a>方法二：迭代</h3><h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><p>我们可以用迭代的方法来实现上述算法。当 l1 和 l2 都不是空链表时，判断 l1 和 l2 哪一个链表的头节点的值更小，将较小值的节点添加到结果里，当一个节点被添加到结果里之后，将对应链表中的节点向后移一位。</p>
+<h4 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h4><p>首先，我们设定一个哨兵节点 prehead ，这可以在最后让我们比较容易地返回合并后的链表。我们维护一个 prev 指针，我们需要做的是调整它的 next 指针。然后，我们重复以下过程，直到 l1 或者 l2 指向了 null ：如果 l1 当前节点的值小于等于 l2 ，我们就把 l1 当前的节点接在 prev 节点的后面同时将 l1 指针往后移一位。否则，我们对 l2 做同样的操作。不管我们将哪一个元素接在了后面，我们都需要把 prev 向后移一位。</p>
+<p>在循环终止的时候， l1 和 l2 至多有一个是非空的。由于输入的两个链表都是有序的，所以不管哪个链表是非空的，它包含的所有元素都比前面已经合并链表中的所有元素都要大。这意味着我们只需要简单地将非空链表接在合并链表的后面，并返回合并链表即可。</p>
+<p>下图展示了 1-&gt;4-&gt;5 和 1-&gt;2-&gt;3-&gt;6 两个链表迭代合并的过程：</p>
+<p>1 / 35</p>
+<p>JavaPythonJavaScriptC++</p>
+<p>class Solution {<br>    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {<br>        ListNode prehead = new ListNode(-1);</p>
+<pre><code>    ListNode prev = prehead;
+    while (l1 != null &amp;&amp; l2 != null) {
+        if (l1.val &lt;= l2.val) {
+            prev.next = l1;
+            l1 = l1.next;
+        } else {
+            prev.next = l2;
+            l2 = l2.next;
+        }
+        prev = prev.next;
+    }
+
+    // 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可
+    prev.next = l1 == null ? l2 : l1;
+
+    return prehead.next;
+}</code></pre><p>}</p>
+<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>时间复杂度：O(n + m)O(n+m) ，其中 nn 和 mm 分别为两个链表的长度。因为每次循环迭代中，l1 和 l2 只有一个元素会被放进合并链表中， 因此 while 循环的次数不会超过两个链表的长度之和。所有其他操作的时间复杂度都是常数级别的，因此总的时间复杂度为 O(n+m)O(n+m)。</p>
+<p>空间复杂度：O(1)O(1) 。我们只需要常数的空间存放若干变量。</p>
+<h1 id="统一来源"><a href="#统一来源" class="headerlink" title="统一来源"></a>统一来源</h1><p>作者：LeetCode-Solution<br>链接：<a href="https://leetcode-cn.com" target="_blank" rel="noopener">https://leetcode-cn.com</a><br>来源：力扣（LeetCode）<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
       
     </div>
@@ -255,7 +431,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/01/01/post-title-with-whitespace/">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/11/18/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.3maven%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -269,7 +445,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/01/post-title-with-whitespace/" class="post-title-link" itemprop="url">post title with whitespace</a>
+            <a href="/2020/11/18/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.3maven%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4/" class="post-title-link" itemprop="url">项目实战/2.1.3maven依赖范围</a>
         </h1>
 
         <div class="post-meta">
@@ -278,16 +454,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-01-01 17:44:51" itemprop="dateCreated datePublished" datetime="2020-01-01T17:44:51+08:00">2020-01-01</time>
+              <time title="创建时间：2020-11-18 23:10:18 / 修改时间：23:34:36" itemprop="dateCreated datePublished" datetime="2020-11-18T23:10:18+08:00">2020-11-18</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-11 16:51:41" itemprop="dateModified" datetime="2020-01-11T16:51:41+08:00">2020-01-11</time>
-              </span>
 
           
 
@@ -300,7 +470,86 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <center><h1>Maven入门</h1></center>
+# <font color="#0A77B9">一、依赖范围</font>
+
+<table>
+<thead>
+<tr>
+<th>常用构建命令</th>
+<th>对于编译<br>classpath有效</th>
+<th>对于测试<br>classpath有效</th>
+<th>对于运行<br>classpath有效</th>
+<th>案例里</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>compile</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>spring-core</td>
+</tr>
+<tr>
+<td>test</td>
+<td>-</td>
+<td>Y</td>
+<td>-</td>
+<td>junit</td>
+</tr>
+<tr>
+<td>provided</td>
+<td>Y</td>
+<td>Y</td>
+<td>-</td>
+<td>servlet-api</td>
+</tr>
+<tr>
+<td>runtime</td>
+<td>-</td>
+<td>Y</td>
+<td>Y</td>
+<td>JDBC驱动</td>
+</tr>
+<tr>
+<td>system</td>
+<td>Y</td>
+<td>Y</td>
+<td>-</td>
+<td>本地的，Maven仓库之外的类库</td>
+</tr>
+</tbody></table>
+<p>像servlet-api这种包，tomcat中已经有了，如果我们将它设置为complie，那么生成jar包的时候就会有一个servlet-api包生成，就会跟tomcat里的相同包产品冲突，这样的话就不需要设置为compile了，设置为provided即可，表示生成jar包时不需要同时生成servlet-api包。</p>
+<p>而像JDBC驱动这种第三方包，在运行时是通过反射去获取对象的，也不需要生成jar包，直接设置为runtime即可</p>
+<h1 id="二、依赖传递"><a href="#二、依赖传递" class="headerlink" title="二、依赖传递"></a><font color="#0A77B9">二、依赖传递</font></h1><ol>
+<li><p>依赖传递的基本概念</p>
+<p>假如有Maven项目A，项目A依赖B，项目B依赖C，那么我们可以说A依赖于C，B是A的直接依赖，C是A的间接依赖。也就是说，依赖的关系为：A-&gt;B-&gt;C，那么我们执行项目A时，会自动把B、C都下载导入到A项目的jar包文件夹中，这就是依赖的传递性。</p>
+</li>
+<li><p>依赖传递引发的问题以及解决方案</p>
+</li>
+</ol>
+<h1 id="三、依赖冲突"><a href="#三、依赖冲突" class="headerlink" title="三、依赖冲突"></a><font color="#0A77B9">三、依赖冲突</font></h1><ol>
+<li><p>依赖冲突产生的原因</p>
+</li>
+<li><p>依赖冲突的解决方案</p>
+<ol>
+<li><p>自己调解原则</p>
+<ol>
+<li>先声明优先</li>
+<li>短路优先(优先级高于上一条)</li>
+</ol>
+</li>
+<li><p>依赖排除</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">exclusions</span>&gt;</span><span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>版本锁定</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+
       
     </div>
 
@@ -319,7 +568,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/01/01/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/11/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.2maven%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -333,7 +582,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/01/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2020/11/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.2maven%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/" class="post-title-link" itemprop="url">项目实战/2.1.2maven核心概念</a>
         </h1>
 
         <div class="post-meta">
@@ -342,26 +591,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-01-01 16:51:42" itemprop="dateCreated datePublished" datetime="2020-01-01T16:51:42+08:00">2020-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-11 14:35:40" itemprop="dateModified" datetime="2020-01-11T14:35:40+08:00">2020-01-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Diary/" itemprop="url" rel="index">
-                    <span itemprop="name">Diary</span>
-                  </a>
-                </span>
+              <time title="创建时间：2020-11-17 23:11:24 / 修改时间：23:29:33" itemprop="dateCreated datePublished" datetime="2020-11-17T23:11:24+08:00">2020-11-17</time>
             </span>
 
           
@@ -375,19 +607,746 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+          <center><h1>Maven入门</h1></center>
+# <font color="#0A77B9">一、Maven常用的构建命令</font>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>常用构建命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>compile</td>
+<td>编译</td>
+</tr>
+<tr>
+<td>test</td>
+<td>测试</td>
+</tr>
+<tr>
+<td>package</td>
+<td>打包</td>
+</tr>
+<tr>
+<td>install</td>
+<td>安装jar包到本地仓库中</td>
+</tr>
+<tr>
+<td>clean</td>
+<td>清理，删除target</td>
+</tr>
+</tbody></table>
+<h1 id="二、坐标和仓库"><a href="#二、坐标和仓库" class="headerlink" title="二、坐标和仓库"></a><font color="#0A77B9">二、坐标和仓库</font></h1><ul>
+<li><p>坐标</p>
+<p>空间中的三维坐标，物理地址等都可以理解为坐标；</p>
+<p>构件的唯一标识符</p>
+</li>
+<li><p>仓库</p>
+<ul>
+<li>本地仓库<ul>
+<li>更改本地仓库的位置</li>
+</ul>
+</li>
+<li>远程仓库<ul>
+<li>中央仓库</li>
+<li>私服</li>
+<li>其他三方库</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="三、pom-xml解析（一）"><a href="#三、pom-xml解析（一）" class="headerlink" title="三、pom.xml解析（一）"></a><font color="#0A77B9">三、pom.xml解析（一）</font></h1><p>pom.xml文件的项目基础信息</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--项目的全球唯一标识符--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>asia.banseon<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--构件的标识符--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>banseon-maven2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--项目产生的构件类型，例如jar、war、ear、pom--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>jar<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--项目当前版本，格式为：主版本.次版本.增量版本-限定版本号--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>banseon-maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url</span>&gt;</span>http://www.baidu.com/banseon<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h1 id="三、pom-xml解析（二）"><a href="#三、pom-xml解析（二）" class="headerlink" title="三、pom.xml解析（二）"></a><font color="#0A77B9">三、pom.xml解析（二）</font></h1><p>pom.xml文件的项目依赖信息</p>
+<h1 id="四、pom-xml解析（三）"><a href="#四、pom-xml解析（三）" class="headerlink" title="四、pom.xml解析（三）"></a><font color="#0A77B9">四、pom.xml解析（三）</font></h1><p>pom.xml文件的项目插件信息</p>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+      
+    </div>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/11/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.1maven%E5%85%A5%E9%97%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.1maven%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">项目实战/2.1.1maven入门</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-17 22:54:55 / 修改时间：23:11:20" itemprop="dateCreated datePublished" datetime="2020-11-17T22:54:55+08:00">2020-11-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><h1>Maven入门</h1></center>
+
+<h1 id="一、Maven介绍"><a href="#一、Maven介绍" class="headerlink" title="一、Maven介绍"></a><font color="#0A77B9">一、Maven介绍</font></h1><p>Maven是什么？</p>
+<p>Maven是Apache软件基金会组织维护的一款自动化构建工具，专注服务于Java平台的<font color="red">项目构建</font>和<font color="red">依赖管理</font>。</p>
+<ul>
+<li><p>项目构建</p>
+<p>用Maven可以管理项目开发的整个生命周期，主要包括如下几个阶段：</p>
+<p>清理–编译–测试–报告–打包–安装–部署</p>
+</li>
+<li><p>依赖管理</p>
+<p>管理项目所依赖的所有Jar文件</p>
+</li>
+</ul>
+<p>Maven能干什么？</p>
+<ul>
+<li>添加三方Jar包</li>
+<li>管理Jar包之间的依赖关系</li>
+<li>获取第三方jar包</li>
+<li>将项目拆分成多个工程模块</li>
+</ul>
+<h1 id="二、Maven基础案例"><a href="#二、Maven基础案例" class="headerlink" title="二、Maven基础案例"></a><font color="#0A77B9">二、Maven基础案例</font></h1><ol>
+<li><p>archetype:generate（交互模式）</p>
+</li>
+<li><p>archetype:generate（非交互模式）</p>
+<p>-DgroupId=组织名，公司网址的反写+项目名</p>
+<p>-DartifactId=项目名-模块名</p>
+<p>-Dversion=版本号</p>
+<p>-Dpackage=包名</p>
+<p>-DarchetypeArtifactId=maven-archetype-webapp</p>
+<p>-DinteractiveMode=false</p>
+</li>
+<li><p>通过eclipse创建maven项目</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/10/17/2.2.1Netty%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/17/2.2.1Netty%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B/" class="post-title-link" itemprop="url">2.2.1Netty线程模型</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-17 22:38:30 / 修改时间：23:12:14" itemprop="dateCreated datePublished" datetime="2020-10-17T22:38:30+08:00">2020-10-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><h1>NIO网络编程</h1></center>
+# <font color="#0A77B9">一、Netty简介</font>
+
+<p>Netty是一个高性能、高可扩展性的异步事件驱动的<font color="red">网络应用程序框架</font>，它极大地简化了TCP和UDP客户端和服务器开发等网络编程。</p>
+<p><font color="#0A77B9">Netty重要的四个内容：</font></p>
+<ol>
+<li>Reactor线程模型：一种高性能的多线程程序设计思路</li>
+<li>Netty中自己定义的Channel概念：增强版的通道概念</li>
+<li>ChannelPipeline职责链设计模式：事件处理机制</li>
+<li>内存管理：增强的ByteBuf缓冲区</li>
+</ol>
+<h1 id="二、Netty整体结构图"><a href="#二、Netty整体结构图" class="headerlink" title="二、Netty整体结构图"></a><font color="#0A77B9">二、Netty整体结构图</font></h1><p><img src="/2020/10/17/2.2/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1602946126531.png" alt="1602946126531"></p>
+<p>图片来自官网，可以看出包含三大块</p>
+<ol>
+<li>支持Socket等多种传输方式；</li>
+<li>提供了多种协议的编解码实现；</li>
+<li>核心设计包含<font color="#0A77B9">事件处理模型、API的使用、ByteBuffer的增强</font></li>
+</ol>
+<h1 id="三、Netty线程模型"><a href="#三、Netty线程模型" class="headerlink" title="三、Netty线程模型"></a><font color="#0A77B9">三、Netty线程模型</font></h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/09/07/2.1.3NIO%E9%9D%9E%E9%98%BB%E5%A1%9E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E7%90%86%E5%BF%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/07/2.1.3NIO%E9%9D%9E%E9%98%BB%E5%A1%9E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E7%90%86%E5%BF%B5/" class="post-title-link" itemprop="url">2.1.3NIO非阻塞网络编程三大核心理念</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-07 23:01:24" itemprop="dateCreated datePublished" datetime="2020-09-07T23:01:24+08:00">2020-09-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-17 22:43:03" itemprop="dateModified" datetime="2020-10-17T22:43:03+08:00">2020-10-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><h1>NIO网络编程</h1></center>
+# <font color="#0A77B9">一、JAVA NIO</font>
+
+<p>始于Java1.4，提供了新的Java IO操作非阻塞API。</p>
+<p>用意是替代Java IO和Java Networking相关的API。</p>
+<p><font color="#0A77B9">NIO有三个核心组件：</font></p>
+<ol>
+<li>Buffer缓冲区</li>
+<li>Channel通道</li>
+<li>Selector选择器</li>
+</ol>
+<h1 id="二、Buffer缓冲区"><a href="#二、Buffer缓冲区" class="headerlink" title="二、Buffer缓冲区"></a><font color="#0A77B9">二、Buffer缓冲区</font></h1><p>缓冲区本质上是一个可以写入数据的内存块（类似数组），然后可以再次读取。此内存块包含在NIO Buffer对象中，该对象提供了一组方法，可以更轻松地使用内存块。</p>
+<p>相比较直接对数组的操作，<font color="#0A77B9">Buffer API更加容易操作和管理。</font></p>
+<p>使用Buffer进行数据写入与读取，需要进行如下<font color="#0A77B9">四个步骤：</font></p>
+<ol>
+<li>将数据写入缓冲区</li>
+<li>调用buffer.flip()，转换为读取模式</li>
+<li>缓冲区读取数据</li>
+<li>调用buffer.clear()或buffer.compact()清除缓冲区</li>
+</ol>
+<p>（此处添加代码示例）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.nio.ByteBuffer;</span><br><span class="line"><span class="keyword">import</span> java.nio.IntBuffer;</span><br><span class="line"><span class="keyword">import</span> java.nio.LongBuffer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BufferDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 构建一个byte字节缓冲区，容量是4</span></span><br><span class="line">        ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="number">4</span>);</span><br><span class="line">        <span class="comment">// 默认写入模式，查看三个重要的指标</span></span><br><span class="line">        System.out.println(String.format(<span class="string">"初始化：capacity容量：%s, position位置：%s, limit限制：%s"</span>, byteBuffer.capacity(),</span><br><span class="line">                byteBuffer.position(), byteBuffer.limit()));</span><br><span class="line">        <span class="comment">// 写入2字节的数据</span></span><br><span class="line">        byteBuffer.put((<span class="keyword">byte</span>) <span class="number">1</span>);</span><br><span class="line">        byteBuffer.put((<span class="keyword">byte</span>) <span class="number">2</span>);</span><br><span class="line">        byteBuffer.put((<span class="keyword">byte</span>) <span class="number">3</span>);</span><br><span class="line">        <span class="comment">// 再看数据</span></span><br><span class="line">        System.out.println(String.format(<span class="string">"写入3字节后，capacity容量：%s, position位置：%s, limit限制：%s"</span>, byteBuffer.capacity(),</span><br><span class="line">                byteBuffer.position(), byteBuffer.limit()));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 转换为读取模式(不调用flip方法，也是可以读取数据的，但是position记录读取的位置不对)</span></span><br><span class="line">        System.out.println(<span class="string">"#######开始读取"</span>);</span><br><span class="line">        byteBuffer.flip();</span><br><span class="line">        <span class="keyword">byte</span> a = byteBuffer.get();</span><br><span class="line">        System.out.println(a);</span><br><span class="line">        <span class="keyword">byte</span> b = byteBuffer.get();</span><br><span class="line">        System.out.println(b);</span><br><span class="line">        System.out.println(String.format(<span class="string">"读取2字节数据后，capacity容量：%s, position位置：%s, limit限制：%s"</span>, byteBuffer.capacity(),</span><br><span class="line">                byteBuffer.position(), byteBuffer.limit()));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 继续写入3字节，此时读模式下，limit=3，position=2.继续写入只能覆盖写入一条数据</span></span><br><span class="line">        <span class="comment">// clear()方法清除整个缓冲区。compact()方法仅清除已阅读的数据。转为写入模式</span></span><br><span class="line">        byteBuffer.compact(); <span class="comment">// buffer : 1 , 3</span></span><br><span class="line">        byteBuffer.put((<span class="keyword">byte</span>) <span class="number">3</span>);</span><br><span class="line">        byteBuffer.put((<span class="keyword">byte</span>) <span class="number">4</span>);</span><br><span class="line">        byteBuffer.put((<span class="keyword">byte</span>) <span class="number">5</span>);</span><br><span class="line">        System.out.println(String.format(<span class="string">"最终的情况，capacity容量：%s, position位置：%s, limit限制：%s"</span>, byteBuffer.capacity(),</span><br><span class="line">                byteBuffer.position(), byteBuffer.limit()));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// rewind() 重置position为0</span></span><br><span class="line">        <span class="comment">// mark() 标记position的位置</span></span><br><span class="line">        <span class="comment">// reset() 重置position为上次mark()标记的位置</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三、Buffer工作原理"><a href="#三、Buffer工作原理" class="headerlink" title="三、Buffer工作原理"></a><font color="#0A77B9">三、Buffer工作原理</font></h1><p>Buffer<font color="#0A77B9">三个重要属性：</font></p>
+<p><font color="#0A77B9">capacity容量：</font>作为一个内存块，Buffer具有一定的固定大小，也称为“容量”。</p>
+<p><font color="#0A77B9">position位置：</font>写入模式时代表写数据的位置。读取模式时代表读取数据的位置。</p>
+<p><font color="#0A77B9">limit限制：</font>写入模式，限制等于buffer的容量。读取模式下，limit等于写入的数据量。</p>
+<p><img src="/2020/09/07/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1600610977185.png" alt="1600610977185"></p>
+<p>Buffer的使用就好像是使用String一样，不用太多纠结实现机制或是其他的东西，会用就好了，本质是对byte[]操作的封装。</p>
+<h1 id="四、ByteBuffer内存类型"><a href="#四、ByteBuffer内存类型" class="headerlink" title="四、ByteBuffer内存类型"></a><font color="#0A77B9">四、ByteBuffer内存类型</font></h1><p>ByteBuffer为性能关键型代码提供了<font color="#0A77B9">直接内存(direct堆外)和非直接内存(heap堆)</font>两种实现。</p>
+<p>堆外内存获取的方式：ByteBuffer directByteBuffer = ByteBuffer.allocateDirect(noBytes);</p>
+<p><font color="#0A77B9">好处：</font></p>
+<ol>
+<li>进行网络IO或者文件IO时比heapBuffer少一次拷贝。(file/socket —- OS memory —- jvm heap)     GC会移动对象内存，在写file或socket的过程中，JVM的实现中，会先把数据复制到堆外，再进行写入。</li>
+<li>GC范围之外，降低GC压力，但实现了自动管理。DirectByteBuffer中有一个Cleaner对象(PhantomReference)，Cleaner被GC前会执行clean方法，触发DirectByteBuffer中定义的Deallocator</li>
+</ol>
+<p>PS：堆外内存了解就行了</p>
+<p><font color="#0A77B9">建议：</font></p>
+<ol>
+<li>性能确实可观的时候才去使用；分配给大型、长寿命；（网络传输、文件读写场景）</li>
+<li>通过虚拟机参数MaxDirectMemorySize限制大小，防止耗尽整个机器的内存；</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 操作堆外内存</span></span><br><span class="line"><span class="keyword">import</span> java.nio.ByteBuffer;</span><br><span class="line"><span class="keyword">import</span> java.nio.IntBuffer;</span><br><span class="line"><span class="keyword">import</span> java.nio.LongBuffer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BufferDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 构建一个byte字节缓冲区，容量是4</span></span><br><span class="line">        ByteBuffer byteBuffer = ByteBuffer.allocateDirect(<span class="number">4</span>);</span><br><span class="line">        <span class="comment">// 默认写入模式，查看三个重要的指标</span></span><br><span class="line">        System.out.println(String.format(<span class="string">"初始化：capacity容量：%s, position位置：%s, limit限制：%s"</span>, byteBuffer.capacity(),</span><br><span class="line">                byteBuffer.position(), byteBuffer.limit()));</span><br><span class="line">        <span class="comment">// 写入2字节的数据</span></span><br><span class="line">        byteBuffer.put((<span class="keyword">byte</span>) <span class="number">1</span>);</span><br><span class="line">        byteBuffer.put((<span class="keyword">byte</span>) <span class="number">2</span>);</span><br><span class="line">        byteBuffer.put((<span class="keyword">byte</span>) <span class="number">3</span>);</span><br><span class="line">        <span class="comment">// 再看数据</span></span><br><span class="line">        System.out.println(String.format(<span class="string">"写入3字节后，capacity容量：%s, position位置：%s, limit限制：%s"</span>, byteBuffer.capacity(),</span><br><span class="line">                byteBuffer.position(), byteBuffer.limit()));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 转换为读取模式(不调用flip方法，也是可以读取数据的，但是position记录读取的位置不对)</span></span><br><span class="line">        System.out.println(<span class="string">"#######开始读取"</span>);</span><br><span class="line">        byteBuffer.flip();</span><br><span class="line">        <span class="keyword">byte</span> a = byteBuffer.get();</span><br><span class="line">        System.out.println(a);</span><br><span class="line">        <span class="keyword">byte</span> b = byteBuffer.get();</span><br><span class="line">        System.out.println(b);</span><br><span class="line">        System.out.println(String.format(<span class="string">"读取2字节数据后，capacity容量：%s, position位置：%s, limit限制：%s"</span>, byteBuffer.capacity(),</span><br><span class="line">                byteBuffer.position(), byteBuffer.limit()));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 继续写入3字节，此时读模式下，limit=3，position=2.继续写入只能覆盖写入一条数据</span></span><br><span class="line">        <span class="comment">// clear()方法清除整个缓冲区。compact()方法仅清除已阅读的数据。转为写入模式</span></span><br><span class="line">        byteBuffer.compact(); <span class="comment">// buffer : 1 , 3</span></span><br><span class="line">        byteBuffer.put((<span class="keyword">byte</span>) <span class="number">3</span>);</span><br><span class="line">        byteBuffer.put((<span class="keyword">byte</span>) <span class="number">4</span>);</span><br><span class="line">        byteBuffer.put((<span class="keyword">byte</span>) <span class="number">5</span>);</span><br><span class="line">        System.out.println(String.format(<span class="string">"最终的情况，capacity容量：%s, position位置：%s, limit限制：%s"</span>, byteBuffer.capacity(),</span><br><span class="line">                byteBuffer.position(), byteBuffer.limit()));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// rewind() 重置position为0</span></span><br><span class="line">        <span class="comment">// mark() 标记position的位置</span></span><br><span class="line">        <span class="comment">// reset() 重置position为上次mark()标记的位置</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="五、Channel通道"><a href="#五、Channel通道" class="headerlink" title="五、Channel通道"></a><font color="#0A77B9">五、Channel通道</font></h1><p><img src="/2020/09/07/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1600700972571.png" alt="1600700972571"></p>
+<h1 id="六、SocketChannel"><a href="#六、SocketChannel" class="headerlink" title="六、SocketChannel"></a><font color="#0A77B9">六、SocketChannel</font></h1><p>SocketChannel用于建立TCP网络连接，类似java.net.Socket。有两种创建SocketChannel形式：</p>
+<ol>
+<li>客户端主动发起和服务器的连接。</li>
+<li>服务端获取的新连接。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 客户端主动发起连接的方式</span></span><br><span class="line">SocketChannel socketChannel = SocketChannel.open();</span><br><span class="line">socketChannel.configureBlocking(<span class="keyword">false</span>); <span class="comment">// 设置为非阻塞模式</span></span><br><span class="line">socketChannel.connect(<span class="keyword">new</span> InetSocketAddress(<span class="string">"http://163.com"</span>,<span class="number">80</span>));</span><br><span class="line"></span><br><span class="line">channel.write(byteBuffer); <span class="comment">// 发送请求数据-向通道写入数据</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> byteRead = socketChannel.read(byteBuffer); <span class="comment">// 读取服务端返回-读取缓冲区的数据</span></span><br><span class="line"></span><br><span class="line">socketChannel.close(); <span class="comment">// 关闭连接</span></span><br></pre></td></tr></table></figure>
+
+<p><font color="#0A77B9">write写：</font>write()在尚未写入任何内容时就可能返回了。需要在循环中调用write()。</p>
+<p><font color="#0A77B9">read读：</font>read()方法可能直接返回而根本不读取任何数据，根据返回的int值判断读取了多少字节。</p>
+<p>PS：整个过程大概是建立一个通道，在这个通道上面进行读写；注意读和写都是非阻塞的。</p>
+<h1 id="七、ServerSocketChannel"><a href="#七、ServerSocketChannel" class="headerlink" title="七、ServerSocketChannel"></a><font color="#0A77B9">七、ServerSocketChannel</font></h1><p>ServerSocketChannel可以监听新建的TCP连接通道，类似ServerSocket。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建网络服务端</span></span><br><span class="line">ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();</span><br><span class="line">serverSocketChannel.configureBlocking(<span class="keyword">false</span>);<span class="comment">//设置未非阻塞模式</span></span><br><span class="line">serverSocketChannel.socket().bind(<span class="keyword">new</span> InetSocketAddress(<span class="number">8080</span>));<span class="comment">//绑定端口</span></span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">    SocketChannel socketChannel = serverSocketChannel.accept();<span class="comment">//获取新tcp连接通道</span></span><br><span class="line">    <span class="keyword">if</span>(socketChannel != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="comment">// tcp请求 读取/响应</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#0A77B9">serverSocketChannel.accept()：</font>如果该通道处于非阻塞模式，那么如果没有挂起的连接，该方法将立即返回null。必须检查返回的SocketChannel是否为null。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 直接基于非阻塞的写法,一个线程处理轮询所有请求</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NIOServer1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 已经建立连接的集合</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ArrayList&lt;SocketChannel&gt; channels = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">// 创建网络服务端</span></span><br><span class="line">        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();</span><br><span class="line">        serverSocketChannel.configureBlocking(<span class="keyword">false</span>); <span class="comment">// 设置为非阻塞模式</span></span><br><span class="line">        serverSocketChannel.socket().bind(<span class="keyword">new</span> InetSocketAddress(<span class="number">8080</span>)); <span class="comment">// 绑定端口</span></span><br><span class="line">        System.out.println(<span class="string">"启动成功"</span>);</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            SocketChannel socketChannel = serverSocketChannel.accept(); <span class="comment">// 获取新tcp连接通道</span></span><br><span class="line">                <span class="comment">// tcp请求 读取/响应</span></span><br><span class="line">                <span class="keyword">if</span> (socketChannel != <span class="keyword">null</span>) &#123;</span><br><span class="line">                System.out.println(<span class="string">"收到新连接 : "</span> + socketChannel.getRemoteAddress());</span><br><span class="line">                socketChannel.configureBlocking(<span class="keyword">false</span>); <span class="comment">// 默认是阻塞的,一定要设置为非阻塞</span></span><br><span class="line">                channels.add(socketChannel);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 没有新连接的情况下,就去处理现有连接的数据,处理完的就删除掉</span></span><br><span class="line">                Iterator&lt;SocketChannel&gt; iterator = channels.iterator();</span><br><span class="line">                <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">                    SocketChannel ch = iterator.next();</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        ByteBuffer requestBuffer = ByteBuffer.allocate(<span class="number">1024</span>);</span><br><span class="line"></span><br><span class="line">                        <span class="keyword">if</span> (ch.read(requestBuffer) == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="comment">// 等于0,代表这个通道没有数据需要处理,那就待会再处理</span></span><br><span class="line">                            <span class="keyword">continue</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">while</span> (ch.isOpen() &amp;&amp; ch.read(requestBuffer) != -<span class="number">1</span>) &#123;</span><br><span class="line">                            <span class="comment">// 长连接情况下,需要手动判断数据有没有读取结束 (此处做一个简单的判断: 超过0字节就认为请求结束了)</span></span><br><span class="line">                            <span class="keyword">if</span> (requestBuffer.position() &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">if</span>(requestBuffer.position() == <span class="number">0</span>) <span class="keyword">continue</span>; <span class="comment">// 如果没数据了, 则不继续后面的处理</span></span><br><span class="line">                        requestBuffer.flip();</span><br><span class="line">                        <span class="keyword">byte</span>[] content = <span class="keyword">new</span> <span class="keyword">byte</span>[requestBuffer.limit()];</span><br><span class="line">                        requestBuffer.get(content);</span><br><span class="line">                        System.out.println(<span class="keyword">new</span> String(content));</span><br><span class="line">                        System.out.println(<span class="string">"收到数据,来自："</span> + ch.getRemoteAddress());</span><br><span class="line"></span><br><span class="line">                        <span class="comment">// 响应结果 200</span></span><br><span class="line">                        String response = <span class="string">"HTTP/1.1 200 OK\r\n"</span> +</span><br><span class="line">                                <span class="string">"Content-Length: 11\r\n\r\n"</span> +</span><br><span class="line">                                <span class="string">"Hello World"</span>;</span><br><span class="line">                        ByteBuffer buffer = ByteBuffer.wrap(response.getBytes());</span><br><span class="line">                        <span class="keyword">while</span> (buffer.hasRemaining()) &#123;</span><br><span class="line">                            ch.write(buffer);</span><br><span class="line">                        &#125;</span><br><span class="line">                        iterator.remove();</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                        iterator.remove();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 用到了非阻塞的API, 再设计上,和BIO可以有很大的不同</span></span><br><span class="line">        <span class="comment">// 问题: 轮询通道的方式,低效,浪费CPU</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">这种低效的循环检查 ，会是NIO服务端的正确开发方式吗？</font></p>
+<h1 id="八、Selector选择器"><a href="#八、Selector选择器" class="headerlink" title="八、Selector选择器"></a><font color="#0A77B9">八、Selector选择器</font></h1><p>Selector是一个Java NIO组件，可以检查一个或多个NIO通道，并确定哪些通道已准备好进行读取或写入。<font color="#0A77B9">从而可以实现单个线程管理多个通道，进而管理多个网络连接。</font></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">   Thread --&gt; Selector</span><br><span class="line">   Selector --&gt;Channel1</span><br><span class="line">   Selector --&gt;Channel2</span><br><span class="line">   Selector --&gt;Channel3</span><br></pre></td></tr></table></figure>
+
+<p>一个线程使用Selector监听多个channel的不同时间：</p>
+<p>四个事件分别对应SelectorKey四个常量。</p>
+<ol>
+<li>Connect连接(SelectionKey.OP_CONNECT)</li>
+<li>Accept准备就绪(OP_ACCEPT)</li>
+<li>Read读取(OP_READ)</li>
+<li>Write写入(OP_WRITE)</li>
+</ol>
+<p>Selector选择器之所以能够实现这样的效果主要是由于它的<font color="#0A77B9">事件驱动机制</font>。</p>
+<p>非阻塞的网络通道下，开发者通过Selector注册对于通道感兴趣的事件类型，线程通过监听事件来触发相应的代码执行。（拓展：更底层是操作系统的多路复用机制）</p>
+<h1 id="九、NIO对比BIO"><a href="#九、NIO对比BIO" class="headerlink" title="九、NIO对比BIO"></a><font color="#0A77B9">九、NIO对比BIO</font></h1><p><img src="/2020/09/07/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1602944984702.png" alt="1602944984702"></p>
+<p>如果你的程序需要支撑大量的连接，使用NIO是最好的方式。</p>
+<p>Tomcat8中，已经完全去除BIO相关的网络处理代码，默认采用NIO进行网络处理。</p>
+<h1 id="十、NIO与多线程结合的改进方案"><a href="#十、NIO与多线程结合的改进方案" class="headerlink" title="十、NIO与多线程结合的改进方案"></a><font color="#0A77B9">十、NIO与多线程结合的改进方案</font></h1><p><img src="/2020/09/07/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1602945401115.png" alt="1602945401115"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * NIO selector 多路复用reactor线程模型</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NIOServerV3</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** 处理业务操作的线程 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ExecutorService workPool = Executors.newCachedThreadPool();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 封装了selector.select()等事件轮询的代码</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ReactorThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Selector selector;</span><br><span class="line">        LinkedBlockingQueue&lt;Runnable&gt; taskQueue = <span class="keyword">new</span> LinkedBlockingQueue&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Selector监听到有事件后,调用这个方法</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">handler</span><span class="params">(SelectableChannel channel)</span> <span class="keyword">throws</span> Exception</span>;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">ReactorThread</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">            selector = Selector.open();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">volatile</span> <span class="keyword">boolean</span> running = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="comment">// 轮询Selector事件</span></span><br><span class="line">            <span class="keyword">while</span> (running) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="comment">// 执行队列中的任务</span></span><br><span class="line">                    Runnable task;</span><br><span class="line">                    <span class="keyword">while</span> ((task = taskQueue.poll()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        task.run();</span><br><span class="line">                    &#125;</span><br><span class="line">                    selector.select(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 获取查询结果</span></span><br><span class="line">                    Set&lt;SelectionKey&gt; selected = selector.selectedKeys();</span><br><span class="line">                    <span class="comment">// 遍历查询结果</span></span><br><span class="line">                    Iterator&lt;SelectionKey&gt; iter = selected.iterator();</span><br><span class="line">                    <span class="keyword">while</span> (iter.hasNext()) &#123;</span><br><span class="line">                        <span class="comment">// 被封装的查询结果</span></span><br><span class="line">                        SelectionKey key = iter.next();</span><br><span class="line">                        iter.remove();</span><br><span class="line">                        <span class="keyword">int</span> readyOps = key.readyOps();</span><br><span class="line">                        <span class="comment">// 关注 Read 和 Accept两个事件</span></span><br><span class="line">                        <span class="keyword">if</span> ((readyOps &amp; (SelectionKey.OP_READ | SelectionKey.OP_ACCEPT)) != <span class="number">0</span> || readyOps == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="keyword">try</span> &#123;</span><br><span class="line">                                SelectableChannel channel = (SelectableChannel) key.attachment();</span><br><span class="line">                                channel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">                                handler(channel);</span><br><span class="line">                                <span class="keyword">if</span> (!channel.isOpen()) &#123;</span><br><span class="line">                                    key.cancel(); <span class="comment">// 如果关闭了,就取消这个KEY的订阅</span></span><br><span class="line">                                &#125;</span><br><span class="line">                            &#125; <span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">                                key.cancel(); <span class="comment">// 如果有异常,就取消这个KEY的订阅</span></span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    selector.selectNow();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> SelectionKey <span class="title">register</span><span class="params">(SelectableChannel channel)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">            <span class="comment">// 为什么register要以任务提交的形式，让reactor线程去处理？</span></span><br><span class="line">            <span class="comment">// 因为线程在执行channel注册到selector的过程中，会和调用selector.select()方法的线程争用同一把锁</span></span><br><span class="line">            <span class="comment">// 而select()方法实在eventLoop中通过while循环调用的，争抢的可能性很高，为了让register能更快的执行，就放到同一个线程来处理</span></span><br><span class="line">            FutureTask&lt;SelectionKey&gt; futureTask = <span class="keyword">new</span> FutureTask&lt;&gt;(() -&gt; channel.register(selector, <span class="number">0</span>, channel));</span><br><span class="line">            taskQueue.add(futureTask);</span><br><span class="line">            <span class="keyword">return</span> futureTask.get();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">doStart</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (!running) &#123;</span><br><span class="line">                running = <span class="keyword">true</span>;</span><br><span class="line">                start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ServerSocketChannel serverSocketChannel;</span><br><span class="line">    <span class="comment">// 1、创建多个线程 - accept处理reactor线程 (accept线程)</span></span><br><span class="line">    <span class="keyword">private</span> ReactorThread[] mainReactorThreads = <span class="keyword">new</span> ReactorThread[<span class="number">1</span>];</span><br><span class="line">    <span class="comment">// 2、创建多个线程 - io处理reactor线程  (I/O线程)</span></span><br><span class="line">    <span class="keyword">private</span> ReactorThread[] subReactorThreads = <span class="keyword">new</span> ReactorThread[<span class="number">8</span>];</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 初始化线程组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">newGroup</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 创建IO线程,负责处理客户端连接以后socketChannel的IO读写</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; subReactorThreads.length; i++) &#123;</span><br><span class="line">            subReactorThreads[i] = <span class="keyword">new</span> ReactorThread() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handler</span><span class="params">(SelectableChannel channel)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">                    <span class="comment">// work线程只负责处理IO处理，不处理accept事件</span></span><br><span class="line">                    SocketChannel ch = (SocketChannel) channel;</span><br><span class="line">                    ByteBuffer requestBuffer = ByteBuffer.allocate(<span class="number">1024</span>);</span><br><span class="line">                    <span class="keyword">while</span> (ch.isOpen() &amp;&amp; ch.read(requestBuffer) != -<span class="number">1</span>) &#123;</span><br><span class="line">                        <span class="comment">// 长连接情况下,需要手动判断数据有没有读取结束 (此处做一个简单的判断: 超过0字节就认为请求结束了)</span></span><br><span class="line">                        <span class="keyword">if</span> (requestBuffer.position() &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (requestBuffer.position() == <span class="number">0</span>) <span class="keyword">return</span>; <span class="comment">// 如果没数据了, 则不继续后面的处理</span></span><br><span class="line">                    requestBuffer.flip();</span><br><span class="line">                    <span class="keyword">byte</span>[] content = <span class="keyword">new</span> <span class="keyword">byte</span>[requestBuffer.limit()];</span><br><span class="line">                    requestBuffer.get(content);</span><br><span class="line">                    System.out.println(<span class="keyword">new</span> String(content));</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">"收到数据,来自："</span> + ch.getRemoteAddress());</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// TODO 业务操作 数据库、接口...</span></span><br><span class="line">                    workPool.submit(() -&gt; &#123;</span><br><span class="line">                    &#125;);</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 响应结果 200</span></span><br><span class="line">                    String response = <span class="string">"HTTP/1.1 200 OK\r\n"</span> +</span><br><span class="line">                            <span class="string">"Content-Length: 11\r\n\r\n"</span> +</span><br><span class="line">                            <span class="string">"Hello World"</span>;</span><br><span class="line">                    ByteBuffer buffer = ByteBuffer.wrap(response.getBytes());</span><br><span class="line">                    <span class="keyword">while</span> (buffer.hasRemaining()) &#123;</span><br><span class="line">                        ch.write(buffer);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建mainReactor线程, 只负责处理serverSocketChannel</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mainReactorThreads.length; i++) &#123;</span><br><span class="line">            mainReactorThreads[i] = <span class="keyword">new</span> ReactorThread() &#123;</span><br><span class="line">                AtomicInteger incr = <span class="keyword">new</span> AtomicInteger(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handler</span><span class="params">(SelectableChannel channel)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">                    <span class="comment">// 只做请求分发，不做具体的数据读取</span></span><br><span class="line">                    ServerSocketChannel ch = (ServerSocketChannel) channel;</span><br><span class="line">                    SocketChannel socketChannel = ch.accept();</span><br><span class="line">                    socketChannel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">                    <span class="comment">// 收到连接建立的通知之后，分发给I/O线程继续去读取数据</span></span><br><span class="line">                    <span class="keyword">int</span> index = incr.getAndIncrement() % subReactorThreads.length;</span><br><span class="line">                    ReactorThread workEventLoop = subReactorThreads[index];</span><br><span class="line">                    workEventLoop.doStart();</span><br><span class="line">                    SelectionKey selectionKey = workEventLoop.register(socketChannel);</span><br><span class="line">                    selectionKey.interestOps(SelectionKey.OP_READ);</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">"收到新连接 : "</span> + socketChannel.getRemoteAddress());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 初始化channel,并且绑定一个eventLoop线程</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException IO异常</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initAndRegister</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">// 1、 创建ServerSocketChannel</span></span><br><span class="line">        serverSocketChannel = ServerSocketChannel.open();</span><br><span class="line">        serverSocketChannel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">        <span class="comment">// 2、 将serverSocketChannel注册到selector</span></span><br><span class="line">        <span class="keyword">int</span> index = <span class="keyword">new</span> Random().nextInt(mainReactorThreads.length);</span><br><span class="line">        mainReactorThreads[index].doStart();</span><br><span class="line">        SelectionKey selectionKey = mainReactorThreads[index].register(serverSocketChannel);</span><br><span class="line">        selectionKey.interestOps(SelectionKey.OP_ACCEPT);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 绑定端口</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException IO异常</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">bind</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//  1、 正式绑定端口，对外服务</span></span><br><span class="line">        serverSocketChannel.bind(<span class="keyword">new</span> InetSocketAddress(<span class="number">8080</span>));</span><br><span class="line">        System.out.println(<span class="string">"启动完成，端口8080"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        NIOServerV3 nioServerV3 = <span class="keyword">new</span> NIOServerV3();</span><br><span class="line">        nioServerV3.newGroup(); <span class="comment">// 1、 创建main和sub两组线程</span></span><br><span class="line">        nioServerV3.initAndRegister(); <span class="comment">// 2、 创建serverSocketChannel，注册到mainReactor线程上的selector上</span></span><br><span class="line">        nioServerV3.bind(); <span class="comment">// 3、 为serverSocketChannel绑定端口</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="十一、小结"><a href="#十一、小结" class="headerlink" title="十一、小结"></a><font color="#0A77B9">十一、小结</font></h1><p>NIO为开发者提供了功能丰富及强大的IO处理API，但是在应用于网络应用开发的过程中，直接使用JDK提供的API，比较繁琐。而且要想将性能进行提升，光有NIO还不够，还需要将多线程技术与之结合起来。</p>
+<p>因为网络编程本身的复杂性，以及JDK API开发的使用难度较高，所以在开源社区中，涌现出了很多对JDK NIO进行封装、增强后的网络编程框架，例如：Netty、Mina等。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/09/05/2.1.2BIO%E9%98%BB%E5%A1%9E%E5%BC%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/05/2.1.2BIO%E9%98%BB%E5%A1%9E%E5%BC%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="post-title-link" itemprop="url">2.1.2BIO阻塞式网络编程</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-05 23:10:45" itemprop="dateCreated datePublished" datetime="2020-09-05T23:10:45+08:00">2020-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-07 23:01:02" itemprop="dateModified" datetime="2020-09-07T23:01:02+08:00">2020-09-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><h1>BIO网络编程</h1></center>
+# <font color="#0A77B9">一、简单C/S程序-服务端示例</font>
+
+<p>普通版本：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * accept()是阻塞的，InputStream，OutputStream也是阻塞的</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BIOServer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        ServerSocket serverSocket = <span class="keyword">new</span> ServerSocket(<span class="number">8080</span>);</span><br><span class="line">        System.out.println(<span class="string">"服务器启动成功"</span>);</span><br><span class="line">        <span class="keyword">while</span> (!serverSocket.isClosed()) &#123;</span><br><span class="line">            Socket request = serverSocket.accept();<span class="comment">// 阻塞</span></span><br><span class="line">            System.out.println(<span class="string">"收到新连接 : "</span> + request.toString());</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">// 接收数据、打印</span></span><br><span class="line">                InputStream inputStream = request.getInputStream(); <span class="comment">// net + i/o</span></span><br><span class="line">                BufferedReader reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(inputStream, <span class="string">"utf-8"</span>));</span><br><span class="line">                String msg;</span><br><span class="line">                <span class="keyword">while</span> ((msg = reader.readLine()) != <span class="keyword">null</span>) &#123; <span class="comment">// 没有数据，阻塞</span></span><br><span class="line">                    <span class="keyword">if</span> (msg.length() == <span class="number">0</span>) &#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    System.out.println(msg);</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(<span class="string">"收到数据,来自："</span>+ request.toString());</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    request.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        serverSocket.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>多线程升级版本：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 多线程支持</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BIOServer1</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ExecutorService threadPool = Executors.newCachedThreadPool();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        ServerSocket serverSocket = <span class="keyword">new</span> ServerSocket(<span class="number">8080</span>);</span><br><span class="line">        System.out.println(<span class="string">"tomcat 服务器启动成功"</span>);</span><br><span class="line">        <span class="keyword">while</span> (!serverSocket.isClosed()) &#123;</span><br><span class="line">            Socket request = serverSocket.accept();</span><br><span class="line">            System.out.println(<span class="string">"收到新连接 : "</span> + request.toString());</span><br><span class="line">            threadPool.execute(() -&gt; &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="comment">// 接收数据、打印</span></span><br><span class="line">                    InputStream inputStream = request.getInputStream();</span><br><span class="line">                    BufferedReader reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(inputStream, <span class="string">"utf-8"</span>));</span><br><span class="line">                    String msg;</span><br><span class="line">                    <span class="keyword">while</span> ((msg = reader.readLine()) != <span class="keyword">null</span>) &#123; <span class="comment">// 阻塞</span></span><br><span class="line">                        <span class="keyword">if</span> (msg.length() == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        System.out.println(msg);</span><br><span class="line">                    &#125;</span><br><span class="line">                    System.out.println(<span class="string">"收到数据,来自："</span>+ request.toString());</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        request.close();</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        serverSocket.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如何用浏览器和我们这个服务端进行交互？</p>
+<p>多线程与浏览器交互版本：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BIOServer2</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ExecutorService threadPool = Executors.newCachedThreadPool();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        ServerSocket serverSocket = <span class="keyword">new</span> ServerSocket(<span class="number">8080</span>);</span><br><span class="line">        System.out.println(<span class="string">"服务器启动成功"</span>);</span><br><span class="line">        <span class="keyword">while</span> (!serverSocket.isClosed()) &#123;</span><br><span class="line">            Socket request = serverSocket.accept();</span><br><span class="line">            System.out.println(<span class="string">"收到新连接 : "</span> + request.toString());</span><br><span class="line">            threadPool.execute(() -&gt; &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="comment">// 接收数据、打印</span></span><br><span class="line">                    InputStream inputStream = request.getInputStream();</span><br><span class="line">                    BufferedReader reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(inputStream, <span class="string">"utf-8"</span>));</span><br><span class="line">                    String msg;</span><br><span class="line">                    <span class="keyword">while</span> ((msg = reader.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (msg.length() == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        System.out.println(msg);</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    System.out.println(<span class="string">"收到数据,来自："</span>+ request.toString());</span><br><span class="line">                    <span class="comment">// 响应结果 200</span></span><br><span class="line">                    OutputStream outputStream = request.getOutputStream();</span><br><span class="line">                    outputStream.write(<span class="string">"HTTP/1.1 200 OK\r\n"</span>.getBytes());</span><br><span class="line">                    outputStream.write(<span class="string">"Content-Length: 11\r\n\r\n"</span>.getBytes());</span><br><span class="line">                    outputStream.write(<span class="string">"Hello World"</span>.getBytes());</span><br><span class="line">                    outputStream.flush();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        request.close();</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        serverSocket.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>统一客户端：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BIOClient</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Charset charset = Charset.forName(<span class="string">"UTF-8"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		Socket s = <span class="keyword">new</span> Socket(<span class="string">"localhost"</span>, <span class="number">8080</span>);</span><br><span class="line">		OutputStream out = s.getOutputStream();</span><br><span class="line"></span><br><span class="line">		Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">"请输入："</span>);</span><br><span class="line">		String msg = scanner.nextLine();</span><br><span class="line">		out.write(msg.getBytes(charset)); <span class="comment">// 阻塞，写完成</span></span><br><span class="line">		scanner.close();</span><br><span class="line">		s.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="二、Http协议-请求数据报解析"><a href="#二、Http协议-请求数据报解析" class="headerlink" title="二、Http协议-请求数据报解析"></a><font color="#0A77B9">二、Http协议-请求数据报解析</font></h1><p><img src="/2020/09/05/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1599490502362.png" alt="1599490502362"></p>
+<h1 id="三、Http协议-相应数据包解析"><a href="#三、Http协议-相应数据包解析" class="headerlink" title="三、Http协议-相应数据包解析"></a><font color="#0A77B9">三、Http协议-相应数据包解析</font></h1><p><img src="/2020/09/05/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1599490527585.png" alt="1599490527585"></p>
+<h1 id="四、Http协议-相应状态码"><a href="#四、Http协议-相应状态码" class="headerlink" title="四、Http协议-相应状态码"></a><font color="#0A77B9">四、Http协议-相应状态码</font></h1><blockquote>
+<p>1xx（临时响应）</p>
+<p>表示临时响应并需要请求者继续执行操作的状态代码</p>
+</blockquote>
+<blockquote>
+<p> 2xx（成功）</p>
+<p>表示成功处理了请求的状态代码</p>
+</blockquote>
+<blockquote>
+<p>3xx（重定向）</p>
+<p>表示要完成请求，需要进一步操作。通常，这些状态代码用来重定向</p>
+</blockquote>
+<blockquote>
+<p>4xx（请求错误）</p>
+<p>这些状态代码表示请求可能出错，妨碍了服务器的处理</p>
+</blockquote>
+<blockquote>
+<p>5xx（服务器错误）</p>
+<p>这些状态代码表示服务器在尝试处理请求时发生内部错误。这些错误可能是服务器本身的错误，而不是请求出错</p>
+</blockquote>
+<h1 id="五、BIO-阻塞IO的含义"><a href="#五、BIO-阻塞IO的含义" class="headerlink" title="五、BIO-阻塞IO的含义"></a><font color="#0A77B9">五、BIO-阻塞IO的含义</font></h1><p><font color="#0A77B9">阻塞（blocking）IO：</font>资源不可用时，IO请求一直阻塞，直到反馈结果（有数据或超时）。</p>
+<p><font color="#0A77B9">非阻塞（non-blocking）IO：</font>资源不可用时，IO请求离开返回，返回数据标识资源不可用。</p>
+<p><font color="#0A77B9">同步（synchronous）IO：</font>应用阻塞在发送或接收数据的状态，直到数据成功传输或返回失败。</p>
+<p><font color="#0A77B9">异步（asynchronous）IO：</font>应用发送或接收数据后立刻返回，实际处理是异步执行的。</p>
+<p>阻塞和非阻塞是获取资源的方式，同步/异步是程序如何处理资源的逻辑设计。</p>
+<p>代码中使用的API：ServerSocket#accept、InputStream#read都是阻塞的API。操作系统底层API中，默认Socket操作都是Blocking型，send/recv等接口都是阻塞的。</p>
+<p><font color="#0A77B9">带来的问题：阻塞导致在处理网络I/O时，一个线程只能处理一个网络连接。</font></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/08/31/2.1.1TCP_UDP%E5%8D%8F%E8%AE%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/31/2.1.1TCP_UDP%E5%8D%8F%E8%AE%AE/" class="post-title-link" itemprop="url">2.1.1TCP_UDP协议</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-31 22:29:22" itemprop="dateCreated datePublished" datetime="2020-08-31T22:29:22+08:00">2020-08-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-05 23:11:47" itemprop="dateModified" datetime="2020-09-05T23:11:47+08:00">2020-09-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><h1>TCP_UDP协议</h1></center>
+
+<h1 id="一、OSI网络七层模型"><a href="#一、OSI网络七层模型" class="headerlink" title="一、OSI网络七层模型"></a><font color="#0A77B9">一、OSI网络七层模型</font></h1><p>为使不同计算机厂家的计算机能够互相通信，以便在更大的范围内建立计算机网络，有必要建立一个国际范围的网络体系结构标准。</p>
+<p><img src="/2020/08/31/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598884403687.png" alt="1598884403687"></p>
+<h1 id="二、各层的主要功能"><a href="#二、各层的主要功能" class="headerlink" title="二、各层的主要功能"></a><font color="#0A77B9">二、各层的主要功能</font></h1><p>低三层：</p>
+<p><font color="#0A77B9">物理层：</font>使原始的数据比特流能在物理介质上传输</p>
+<p><font color="#0A77B9">数据链路层：</font>通过校验、确认和反馈重发等手段，形成稳定的数据链路。（01010101）。</p>
+<p><font color="#0A77B9">网络层：</font>进行路由选择和流量控制。（IP协议）</p>
+<p><font color="#0A77B9">传输层：</font>提供可靠的端口到端口的数据传输服务。（TCP/UDP协议）。</p>
+<p>高三层：</p>
+<p><font color="#0A77B9">会话层：</font>负责建立、管理和终止进程之间的会话和数据交换。</p>
+<p><font color="#0A77B9">表示层：</font>负责数据格式转换、数据加密与解密、压缩与解压缩等。</p>
+<p><font color="#0A77B9">应用层：</font>为用户的应用进程提供网络服务。</p>
+<h1 id="三、传输控制协议TCP"><a href="#三、传输控制协议TCP" class="headerlink" title="三、传输控制协议TCP"></a><font color="#0A77B9">三、传输控制协议TCP</font></h1><p>传输控制协议（TCP）是Internet一个重要的传输层协议。TCP提供面向连接、可靠、有序、字节流传输服务。应用程序在使用TCP之前，必须先建立TCP连接。</p>
+<p>标志位说明</p>
+<p>URG：紧急指针</p>
+<p><font color="red">ACK：</font>确认序号</p>
+<p>PSH：有DATA数据传输</p>
+<p>RST：连接重置</p>
+<p><font color="red">SYN：</font>建立连接</p>
+<p><font color="red">FIN：</font>关闭连接</p>
+<h1 id="四、TCP握手机制"><a href="#四、TCP握手机制" class="headerlink" title="四、TCP握手机制"></a><font color="#0A77B9">四、TCP握手机制</font></h1><p>三次握手从本质上来说不是要去打通网络关系，而是说在发送数据之前我们先要检测一个网络是否通畅，是为了完成最大程度检测网络通畅的一个目的，所有会有三次握手，就像打电话：</p>
+<p>A：能听到吗？</p>
+<p>B：可以听到，你能听到吗？</p>
+<p>A：可以听到</p>
+<p>三次握手：客户端首先会发送一个数据包过去，问一下服务端：服务端我想跟你建立连接，你有没有问题？服务端收到请求之后会返回一个确认包过去，这个确认包是明确地针对于客户端的这次握手请求而去响应的，返回之后客户端认为本次连接可以建立，但是这个时候还要告诉服务端说：我已经建立连接了，你也可以建立连接。这其实是一个确认机制，双方都确认当前网络没有问题，可以进行通信了。</p>
+<p>四次挥手：首先客户端会发送一个请求告诉服务端：大哥，我已经准备结束了。客户端进入等待确认状态，服务端收到这个请求之后会去标识这个客户端要结束连接了，标识为半关闭状态，这时候服务端返回一个相应告知客户端可以关闭，此时客户端的状态变为等待释放，因为此时服务端可能还有一些数据需要传输。然后服务端会主动再发送一个确认包给客服端明确说可以关闭了，客户端收到这个消息之后会发送一个数据包告诉服务端已经收到了消息，你可以关闭了，然后客户端为进入一个延时关闭状态，具体延时多久可以设置<img src="/2020/08/31/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1599315026356.png" alt="1599315026356"></p>
+<h1 id="五、用户数据报协议UDP"><a href="#五、用户数据报协议UDP" class="headerlink" title="五、用户数据报协议UDP"></a><font color="#0A77B9">五、用户数据报协议UDP</font></h1><p>用户数据报协议UDP是Internet传输层协议。</p>
+<p>提供无连接、不可靠、数据报尽力传输服务。</p>
+<p>开发人员在<font color="red">UDP上构建应用，关注以下几点</font>：</p>
+<ol>
+<li>应用进程更容易控制发送什么数据以及何时发送</li>
+<li>无需建立连接</li>
+<li>无连接状态</li>
+<li>首部开销小</li>
+</ol>
+<h1 id="六、UDP和TCP比较"><a href="#六、UDP和TCP比较" class="headerlink" title="六、UDP和TCP比较"></a><font color="#0A77B9">六、UDP和TCP比较</font></h1><table>
+<thead>
+<tr>
+<th align="center">TCP</th>
+<th align="center">UDP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">面向连接</td>
+<td align="center">无连接</td>
+</tr>
+<tr>
+<td align="center">提供可靠性保证</td>
+<td align="center">不可靠</td>
+</tr>
+<tr>
+<td align="center">慢</td>
+<td align="center">快</td>
+</tr>
+<tr>
+<td align="center">资源占用多</td>
+<td align="center">资源占用少</td>
+</tr>
+</tbody></table>
+<p>什么情况下用到UDP？</p>
+<h1 id="七、Socker编程"><a href="#七、Socker编程" class="headerlink" title="七、Socker编程"></a><font color="#0A77B9">七、Socker编程</font></h1><ul>
+<li><p>Internet中应用最广泛的网络应用编程接口，实现与3种底层协议接口：</p>
+<ul>
+<li>数据报类型套接字SOCK_DGRAM（面向UDP接口）</li>
+<li>流式套接字SOCK_STREAM（面向TCP接口）</li>
+<li>原始套接字SOCK_RAW（面向网络层协议接口IP、ICMP等）</li>
+</ul>
+</li>
+<li><p>主要socket API及其调用过程</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">创建套接字--&gt;端点绑定</span><br><span class="line">端点绑定--&gt;发送数据</span><br><span class="line">发送数据--&gt;接收数据</span><br><span class="line">接收数据--&gt;释放套接字</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Socket API函数定义<ul>
+<li>listen()、accept()函数只能用于服务器端；</li>
+<li>connect()函数只能用于客户端；</li>
+<li>socket()、bind()、send()、recv()、sendto()、recvfrom()、close()</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/08/23/1.3.4fork_join%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/23/1.3.4fork_join%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3/" class="post-title-link" itemprop="url">1.3.4fork_join框架详解</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-23 22:21:25" itemprop="dateCreated datePublished" datetime="2020-08-23T22:21:25+08:00">2020-08-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 22:28:46" itemprop="dateModified" datetime="2020-08-31T22:28:46+08:00">2020-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><h1>fork/join并发处理框架</h1></center>
+# <font color="#0A77B9">一、用来做什么</font>
+
+<p>ForkJoinPool是ExecutorService接口的实现，它专为可以递归分解成小块的工作而设计。</p>
+<p>fork/join框架将任务分配给线程池中的工作线程，充分利用多处理器的优势，提高程序性能。</p>
+<p>使用fork/join框架的第一步是编写执行一部分工作的代码。类似的伪代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果（当前工作部分足够小）</span><br><span class="line">    直接做这项工作</span><br><span class="line">其他</span><br><span class="line">	把当前工作分成两部分</span><br><span class="line">	调用这两个部分并等待结果</span><br></pre></td></tr></table></figure>
+
+<p>将此代码包装在ForkJoinTask子类中，通常是RecursiveTask（可以返回结果）或RecursiveAction（不返回结果）</p>
+<h1 id="二、意图梳理"><a href="#二、意图梳理" class="headerlink" title="二、意图梳理"></a><font color="#0A77B9">二、意图梳理</font></h1><p>关键点：分解任务fork出新任务，汇集join任务执行结果</p>
+<p><img src="/2020/08/23/1.3/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598277324037.png" alt="1598277324037"></p>
+<h1 id="三、经典网关场景，查询多个系统数据"><a href="#三、经典网关场景，查询多个系统数据" class="headerlink" title="三、经典网关场景，查询多个系统数据"></a><font color="#0A77B9">三、经典网关场景，查询多个系统数据</font></h1><p>移动互联网的情况</p>
+<ul>
+<li>一个接口请求要获取很多信息；</li>
+<li>后端分布式系统，拆分成多个子系统；</li>
+<li>每个页面的数据需要请求多个url，从不同子系统取数据</li>
+</ul>
+<p>后端接口执行 – 大概流程</p>
+<ol>
+<li>收到一个请求</li>
+<li>调用多个服务接口获取其他系统的数据</li>
+<li>最后汇总返回</li>
+</ol>
+<h1 id="四、实现思路"><a href="#四、实现思路" class="headerlink" title="四、实现思路"></a><font color="#0A77B9">四、实现思路</font></h1><ul>
+<li>每个Worker线程都维护一个任务队列，即ForkJoinWorkerThread中的任务队列</li>
+<li>任务队列是双向队列，这样可以同时实现LIFO和FIFO</li>
+<li>子任务会被加入到原先任务所在Worker线程的任务队列</li>
+<li>Worker线程用LIFO的方法取出任务，后进队列的任务先取出来（子任务总是后加入队列，但是需要先执行）</li>
+<li>当任务队列为空，会随机从其他的worker的队列中拿走一个任务执行（工作窃取：steal work）</li>
+<li>如果一个Worker线程遇到了join操作，而这时候正在处理其他任务，会等到这个任务结束。否则直接返回</li>
+<li>如果一个Worker线程窃取任务失败，它会用yield或者sleep之类的方法休息一会儿，再尝试（如果所有线程都是空闲状态，即没有任务运行，那么该线程也会进入阻塞状态等待新任务的到来）</li>
+</ul>
+<p>PS：工作窃取和任务队列的数量是很重要的考核点</p>
+<h1 id="五、适用"><a href="#五、适用" class="headerlink" title="五、适用"></a><font color="#0A77B9">五、适用</font></h1><p>使用尽可能少的线程池 - 在大多数情况下，最好的决定是为每个应用程序或系统使用一个线程池</p>
+<p>如果不需要特定调整，请使用默认的公共线程池</p>
+<p>使用合理的阀值将ForkJoinTask拆分为子任务</p>
+<p>避免在ForkJoinTask中出现任何阻塞</p>
+<p>适用数据处理、结果汇总、统计等场景；</p>
+<p>java8实例：java.util.Arrays类用于其parallelSort()方法</p>
+<p><font color="#0A77B9">结语：工作窃取带来的性能提升偏理论，API的复杂性较高，实际研发中可控性来说不如其他API</font></p>
+<h1 id="六、FutureTask原理及多线程知识扩展"><a href="#六、FutureTask原理及多线程知识扩展" class="headerlink" title="六、FutureTask原理及多线程知识扩展"></a><font color="#0A77B9">六、FutureTask原理及多线程知识扩展</font></h1><p>Future表示异步计算的结果，提供了用于检查计算是否完成、等待计算完成以及获取结果的方法</p>
+<h1 id="七、FutureTask应用"><a href="#七、FutureTask应用" class="headerlink" title="七、FutureTask应用"></a><font color="#0A77B9">七、FutureTask应用</font></h1><p>多线程同时执行多个逻辑</p>
+<p>总的执行时间，取决于执行最慢的逻辑</p>
+<p>逻辑之间无依赖关系，可同时执行，则可以<font color="#0A77B9">应用多线程技术进行优化</font></p>
+<h1 id="八、JDK学习思路汇总"><a href="#八、JDK学习思路汇总" class="headerlink" title="八、JDK学习思路汇总"></a><font color="#0A77B9">八、JDK学习思路汇总</font></h1><p>积累：由基层知识再到封装的工具类，<font color="#0A77B9">足够多的“因”才能推理出“果”；</font></p>
+<p>思路：从顶层看使用，从底层看原理。</p>
+<p>结语：多线程编程中，不变的是<font color="#0A77B9">内存模型和线程通信</font>两个核心技术点，变化的是各种程序设计想法（算法）。</p>
 
       
     </div>
@@ -406,6 +1365,9 @@
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -472,21 +1434,9 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>

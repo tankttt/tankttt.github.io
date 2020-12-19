@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://tankttt.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="fork&#x2F;join并发处理框架 # 一、用来做什么  ForkJoinPool是ExecutorService接口的实现，它专为可以递归分解成小块的工作而设计。 fork&#x2F;join框架将任务分配给线程池中的工作线程，充分利用多处理器的优势，提高程序性能。 使用fork&#x2F;join框架的第一步是编写执行一部分工作的代码。类似的伪代码如下： 12345如果（当前工作部分足够小）    直接做这项工作其他">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.3.4fork_join框架详解">
+<meta property="og:url" content="https://tankttt.github.io/2020/08/23/1.3.4fork_join%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Tank">
+<meta property="og:description" content="fork&#x2F;join并发处理框架 # 一、用来做什么  ForkJoinPool是ExecutorService接口的实现，它专为可以递归分解成小块的工作而设计。 fork&#x2F;join框架将任务分配给线程池中的工作线程，充分利用多处理器的优势，提高程序性能。 使用fork&#x2F;join框架的第一步是编写执行一部分工作的代码。类似的伪代码如下： 12345如果（当前工作部分足够小）    直接做这项工作其他">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tankttt.github.io/2020/08/23/1.3/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598277324037.png">
+<meta property="article:published_time" content="2020-08-23T14:21:25.523Z">
+<meta property="article:modified_time" content="2020-08-31T14:28:46.684Z">
+<meta property="article:author" content="Tank">
+<meta property="article:tag" content="全栈  Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tankttt.github.io/2020/08/23/1.3/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598277324037.png">
+
+<link rel="canonical" href="https://tankttt.github.io/2020/08/23/1.3.4fork_join%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>1.3.4fork_join框架详解 | Tank</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tank</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Java, SpringBoot, SpringCloud, Design Pattern.</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/08/23/1.3.4fork_join%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          1.3.4fork_join框架详解
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-23 22:21:25" itemprop="dateCreated datePublished" datetime="2020-08-23T22:21:25+08:00">2020-08-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 22:28:46" itemprop="dateModified" datetime="2020-08-31T22:28:46+08:00">2020-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center><h1>fork/join并发处理框架</h1></center>
+# <font color="#0A77B9">一、用来做什么</font>
+
+<p>ForkJoinPool是ExecutorService接口的实现，它专为可以递归分解成小块的工作而设计。</p>
+<p>fork/join框架将任务分配给线程池中的工作线程，充分利用多处理器的优势，提高程序性能。</p>
+<p>使用fork/join框架的第一步是编写执行一部分工作的代码。类似的伪代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果（当前工作部分足够小）</span><br><span class="line">    直接做这项工作</span><br><span class="line">其他</span><br><span class="line">	把当前工作分成两部分</span><br><span class="line">	调用这两个部分并等待结果</span><br></pre></td></tr></table></figure>
+
+<p>将此代码包装在ForkJoinTask子类中，通常是RecursiveTask（可以返回结果）或RecursiveAction（不返回结果）</p>
+<h1 id="二、意图梳理"><a href="#二、意图梳理" class="headerlink" title="二、意图梳理"></a><font color="#0A77B9">二、意图梳理</font></h1><p>关键点：分解任务fork出新任务，汇集join任务执行结果</p>
+<p><img src="/2020/08/23/1.3/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598277324037.png" alt="1598277324037"></p>
+<h1 id="三、经典网关场景，查询多个系统数据"><a href="#三、经典网关场景，查询多个系统数据" class="headerlink" title="三、经典网关场景，查询多个系统数据"></a><font color="#0A77B9">三、经典网关场景，查询多个系统数据</font></h1><p>移动互联网的情况</p>
+<ul>
+<li>一个接口请求要获取很多信息；</li>
+<li>后端分布式系统，拆分成多个子系统；</li>
+<li>每个页面的数据需要请求多个url，从不同子系统取数据</li>
+</ul>
+<p>后端接口执行 – 大概流程</p>
+<ol>
+<li>收到一个请求</li>
+<li>调用多个服务接口获取其他系统的数据</li>
+<li>最后汇总返回</li>
+</ol>
+<h1 id="四、实现思路"><a href="#四、实现思路" class="headerlink" title="四、实现思路"></a><font color="#0A77B9">四、实现思路</font></h1><ul>
+<li>每个Worker线程都维护一个任务队列，即ForkJoinWorkerThread中的任务队列</li>
+<li>任务队列是双向队列，这样可以同时实现LIFO和FIFO</li>
+<li>子任务会被加入到原先任务所在Worker线程的任务队列</li>
+<li>Worker线程用LIFO的方法取出任务，后进队列的任务先取出来（子任务总是后加入队列，但是需要先执行）</li>
+<li>当任务队列为空，会随机从其他的worker的队列中拿走一个任务执行（工作窃取：steal work）</li>
+<li>如果一个Worker线程遇到了join操作，而这时候正在处理其他任务，会等到这个任务结束。否则直接返回</li>
+<li>如果一个Worker线程窃取任务失败，它会用yield或者sleep之类的方法休息一会儿，再尝试（如果所有线程都是空闲状态，即没有任务运行，那么该线程也会进入阻塞状态等待新任务的到来）</li>
+</ul>
+<p>PS：工作窃取和任务队列的数量是很重要的考核点</p>
+<h1 id="五、适用"><a href="#五、适用" class="headerlink" title="五、适用"></a><font color="#0A77B9">五、适用</font></h1><p>使用尽可能少的线程池 - 在大多数情况下，最好的决定是为每个应用程序或系统使用一个线程池</p>
+<p>如果不需要特定调整，请使用默认的公共线程池</p>
+<p>使用合理的阀值将ForkJoinTask拆分为子任务</p>
+<p>避免在ForkJoinTask中出现任何阻塞</p>
+<p>适用数据处理、结果汇总、统计等场景；</p>
+<p>java8实例：java.util.Arrays类用于其parallelSort()方法</p>
+<p><font color="#0A77B9">结语：工作窃取带来的性能提升偏理论，API的复杂性较高，实际研发中可控性来说不如其他API</font></p>
+<h1 id="六、FutureTask原理及多线程知识扩展"><a href="#六、FutureTask原理及多线程知识扩展" class="headerlink" title="六、FutureTask原理及多线程知识扩展"></a><font color="#0A77B9">六、FutureTask原理及多线程知识扩展</font></h1><p>Future表示异步计算的结果，提供了用于检查计算是否完成、等待计算完成以及获取结果的方法</p>
+<h1 id="七、FutureTask应用"><a href="#七、FutureTask应用" class="headerlink" title="七、FutureTask应用"></a><font color="#0A77B9">七、FutureTask应用</font></h1><p>多线程同时执行多个逻辑</p>
+<p>总的执行时间，取决于执行最慢的逻辑</p>
+<p>逻辑之间无依赖关系，可同时执行，则可以<font color="#0A77B9">应用多线程技术进行优化</font></p>
+<h1 id="八、JDK学习思路汇总"><a href="#八、JDK学习思路汇总" class="headerlink" title="八、JDK学习思路汇总"></a><font color="#0A77B9">八、JDK学习思路汇总</font></h1><p>积累：由基层知识再到封装的工具类，<font color="#0A77B9">足够多的“因”才能推理出“果”；</font></p>
+<p>思路：从顶层看使用，从底层看原理。</p>
+<p>结语：多线程编程中，不变的是<font color="#0A77B9">内存模型和线程通信</font>两个核心技术点，变化的是各种程序设计想法（算法）。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/23/1.3.3%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BBlist_set_queue/" rel="prev" title="1.3.3并发容器类list_set_queue">
+      <i class="fa fa-chevron-left"></i> 1.3.3并发容器类list_set_queue
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/31/2.1.1TCP_UDP%E5%8D%8F%E8%AE%AE/" rel="next" title="2.1.1TCP_UDP协议">
+      2.1.1TCP_UDP协议 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">fork&#x2F;join并发处理框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、意图梳理"><span class="nav-number">2.</span> <span class="nav-text">二、意图梳理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、经典网关场景，查询多个系统数据"><span class="nav-number">3.</span> <span class="nav-text">三、经典网关场景，查询多个系统数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、实现思路"><span class="nav-number">4.</span> <span class="nav-text">四、实现思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、适用"><span class="nav-number">5.</span> <span class="nav-text">五、适用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、FutureTask原理及多线程知识扩展"><span class="nav-number">6.</span> <span class="nav-text">六、FutureTask原理及多线程知识扩展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、FutureTask应用"><span class="nav-number">7.</span> <span class="nav-text">七、FutureTask应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、JDK学习思路汇总"><span class="nav-number">8.</span> <span class="nav-text">八、JDK学习思路汇总</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tank"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">Tank</p>
+  <div class="site-description" itemprop="description">Strong when strong, to strive, to seek, to find.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tank</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -46,20 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="Strong when strong, to strive, to seek, to find.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://tankttt.github.io/tags/index.html">
+  <meta name="description" content="Maven入门 # 一、依赖范围     常用构建命令 对于编译classpath有效 对于测试classpath有效 对于运行classpath有效 案例里    compile Y Y Y spring-core   test - Y - junit   provided Y Y - servlet-api   runtime - Y Y JDBC驱动   system Y Y - 本地的，M">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目实战&#x2F;2.1.3maven依赖范围">
+<meta property="og:url" content="https://tankttt.github.io/2020/11/18/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.3maven%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4/index.html">
 <meta property="og:site_name" content="Tank">
-<meta property="og:description" content="Strong when strong, to strive, to seek, to find.">
+<meta property="og:description" content="Maven入门 # 一、依赖范围     常用构建命令 对于编译classpath有效 对于测试classpath有效 对于运行classpath有效 案例里    compile Y Y Y spring-core   test - Y - junit   provided Y Y - servlet-api   runtime - Y Y JDBC驱动   system Y Y - 本地的，M">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-01-11T05:49:35.000Z">
-<meta property="article:modified_time" content="2020-01-11T08:51:41.095Z">
+<meta property="article:published_time" content="2020-11-18T15:10:18.951Z">
+<meta property="article:modified_time" content="2020-11-18T15:34:36.414Z">
 <meta property="article:author" content="Tank">
 <meta property="article:tag" content="全栈  Java">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://tankttt.github.io/tags/">
+<link rel="canonical" href="https://tankttt.github.io/2020/11/18/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.3maven%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4/">
 
 
 <script id="page-configurations">
@@ -67,12 +67,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>tags | Tank
-  </title>
+  <title>项目实战/2.1.3maven依赖范围 | Tank</title>
   
 
 
@@ -178,52 +177,162 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tankttt.github.io/2020/11/18/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.3maven%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tank">
+      <meta itemprop="description" content="Strong when strong, to strive, to seek, to find.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tank">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          项目实战/2.1.3maven依赖范围
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">tags
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2020-11-18 23:10:18 / 修改时间：23:34:36" itemprop="dateCreated datePublished" datetime="2020-11-18T23:10:18+08:00">2020-11-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center><h1>Maven入门</h1></center>
+# <font color="#0A77B9">一、依赖范围</font>
+
+<table>
+<thead>
+<tr>
+<th>常用构建命令</th>
+<th>对于编译<br>classpath有效</th>
+<th>对于测试<br>classpath有效</th>
+<th>对于运行<br>classpath有效</th>
+<th>案例里</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>compile</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>spring-core</td>
+</tr>
+<tr>
+<td>test</td>
+<td>-</td>
+<td>Y</td>
+<td>-</td>
+<td>junit</td>
+</tr>
+<tr>
+<td>provided</td>
+<td>Y</td>
+<td>Y</td>
+<td>-</td>
+<td>servlet-api</td>
+</tr>
+<tr>
+<td>runtime</td>
+<td>-</td>
+<td>Y</td>
+<td>Y</td>
+<td>JDBC驱动</td>
+</tr>
+<tr>
+<td>system</td>
+<td>Y</td>
+<td>Y</td>
+<td>-</td>
+<td>本地的，Maven仓库之外的类库</td>
+</tr>
+</tbody></table>
+<p>像servlet-api这种包，tomcat中已经有了，如果我们将它设置为complie，那么生成jar包的时候就会有一个servlet-api包生成，就会跟tomcat里的相同包产品冲突，这样的话就不需要设置为compile了，设置为provided即可，表示生成jar包时不需要同时生成servlet-api包。</p>
+<p>而像JDBC驱动这种第三方包，在运行时是通过反射去获取对象的，也不需要生成jar包，直接设置为runtime即可</p>
+<h1 id="二、依赖传递"><a href="#二、依赖传递" class="headerlink" title="二、依赖传递"></a><font color="#0A77B9">二、依赖传递</font></h1><ol>
+<li><p>依赖传递的基本概念</p>
+<p>假如有Maven项目A，项目A依赖B，项目B依赖C，那么我们可以说A依赖于C，B是A的直接依赖，C是A的间接依赖。也就是说，依赖的关系为：A-&gt;B-&gt;C，那么我们执行项目A时，会自动把B、C都下载导入到A项目的jar包文件夹中，这就是依赖的传递性。</p>
+</li>
+<li><p>依赖传递引发的问题以及解决方案</p>
+</li>
+</ol>
+<h1 id="三、依赖冲突"><a href="#三、依赖冲突" class="headerlink" title="三、依赖冲突"></a><font color="#0A77B9">三、依赖冲突</font></h1><ol>
+<li><p>依赖冲突产生的原因</p>
+</li>
+<li><p>依赖冲突的解决方案</p>
+<ol>
+<li><p>自己调解原则</p>
+<ol>
+<li>先声明优先</li>
+<li>短路优先(优先级高于上一条)</li>
+</ol>
+</li>
+<li><p>依赖排除</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">exclusions</span>&gt;</span><span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>版本锁定</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/17/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.1.2maven%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/" rel="prev" title="项目实战/2.1.2maven核心概念">
+      <i class="fa fa-chevron-left"></i> 项目实战/2.1.2maven核心概念
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/12/19/LeetCode%E5%A5%8B%E6%96%97%E7%AF%87/01_LeetCode%20%E7%83%AD%E9%A2%98%20HOT%20100/01_%E9%93%BE%E8%A1%A8%E7%AF%87/" rel="next" title="LeetCode奋斗篇/01_LeetCode 热题 HOT 100/01_链表篇">
+      LeetCode奋斗篇/01_LeetCode 热题 HOT 100/01_链表篇 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              暂无标签
-            </div>
-            <div class="tag-cloud-tags">
-              
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
   </div>
 
 
@@ -275,6 +384,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Maven入门</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、依赖传递"><span class="nav-number">2.</span> <span class="nav-text">二、依赖传递</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、依赖冲突"><span class="nav-number">3.</span> <span class="nav-text">三、依赖冲突</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
