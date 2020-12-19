@@ -53,14 +53,14 @@
 <meta property="og:site_name" content="Tank">
 <meta property="og:description" content="TCP_UDP协议  一、OSI网络七层模型为使不同计算机厂家的计算机能够互相通信，以便在更大的范围内建立计算机网络，有必要建立一个国际范围的网络体系结构标准。  二、各层的主要功能低三层： 物理层：使原始的数据比特流能在物理介质上传输 数据链路层：通过校验、确认和反馈重发等手段，形成稳定的数据链路。（01010101）。 网络层：进行路由选择和流量控制。（IP协议） 传输层：提供可靠的端口到端口">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tankttt.github.io/2020/08/31/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598884403687.png">
-<meta property="og:image" content="https://tankttt.github.io/2020/08/31/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1599315026356.png">
+<meta property="og:image" content="https://tankttt.github.io/2020/08/31/2.1.1TCP_UDP%E5%8D%8F%E8%AE%AE/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598884403687.png">
+<meta property="og:image" content="https://tankttt.github.io/2020/08/31/2.1.1TCP_UDP%E5%8D%8F%E8%AE%AE/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1599315026356.png">
 <meta property="article:published_time" content="2020-08-31T14:29:22.178Z">
 <meta property="article:modified_time" content="2020-09-05T15:11:47.680Z">
 <meta property="article:author" content="Tank">
 <meta property="article:tag" content="全栈  Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tankttt.github.io/2020/08/31/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598884403687.png">
+<meta name="twitter:image" content="https://tankttt.github.io/2020/08/31/2.1.1TCP_UDP%E5%8D%8F%E8%AE%AE/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598884403687.png">
 
 <link rel="canonical" href="https://tankttt.github.io/2020/08/31/2.1.1TCP_UDP%E5%8D%8F%E8%AE%AE/">
 
@@ -236,7 +236,7 @@
         <center><h1>TCP_UDP协议</h1></center>
 
 <h1 id="一、OSI网络七层模型"><a href="#一、OSI网络七层模型" class="headerlink" title="一、OSI网络七层模型"></a><font color="#0A77B9">一、OSI网络七层模型</font></h1><p>为使不同计算机厂家的计算机能够互相通信，以便在更大的范围内建立计算机网络，有必要建立一个国际范围的网络体系结构标准。</p>
-<p><img src="/2020/08/31/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598884403687.png" alt="1598884403687"></p>
+<p><img src="/2020/08/31/2.1.1TCP_UDP%E5%8D%8F%E8%AE%AE/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1598884403687.png" alt="1598884403687"></p>
 <h1 id="二、各层的主要功能"><a href="#二、各层的主要功能" class="headerlink" title="二、各层的主要功能"></a><font color="#0A77B9">二、各层的主要功能</font></h1><p>低三层：</p>
 <p><font color="#0A77B9">物理层：</font>使原始的数据比特流能在物理介质上传输</p>
 <p><font color="#0A77B9">数据链路层：</font>通过校验、确认和反馈重发等手段，形成稳定的数据链路。（01010101）。</p>
@@ -259,7 +259,7 @@
 <p>B：可以听到，你能听到吗？</p>
 <p>A：可以听到</p>
 <p>三次握手：客户端首先会发送一个数据包过去，问一下服务端：服务端我想跟你建立连接，你有没有问题？服务端收到请求之后会返回一个确认包过去，这个确认包是明确地针对于客户端的这次握手请求而去响应的，返回之后客户端认为本次连接可以建立，但是这个时候还要告诉服务端说：我已经建立连接了，你也可以建立连接。这其实是一个确认机制，双方都确认当前网络没有问题，可以进行通信了。</p>
-<p>四次挥手：首先客户端会发送一个请求告诉服务端：大哥，我已经准备结束了。客户端进入等待确认状态，服务端收到这个请求之后会去标识这个客户端要结束连接了，标识为半关闭状态，这时候服务端返回一个相应告知客户端可以关闭，此时客户端的状态变为等待释放，因为此时服务端可能还有一些数据需要传输。然后服务端会主动再发送一个确认包给客服端明确说可以关闭了，客户端收到这个消息之后会发送一个数据包告诉服务端已经收到了消息，你可以关闭了，然后客户端为进入一个延时关闭状态，具体延时多久可以设置<img src="/2020/08/31/2.1/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1599315026356.png" alt="1599315026356"></p>
+<p>四次挥手：首先客户端会发送一个请求告诉服务端：大哥，我已经准备结束了。客户端进入等待确认状态，服务端收到这个请求之后会去标识这个客户端要结束连接了，标识为半关闭状态，这时候服务端返回一个相应告知客户端可以关闭，此时客户端的状态变为等待释放，因为此时服务端可能还有一些数据需要传输。然后服务端会主动再发送一个确认包给客服端明确说可以关闭了，客户端收到这个消息之后会发送一个数据包告诉服务端已经收到了消息，你可以关闭了，然后客户端为进入一个延时关闭状态，具体延时多久可以设置<img src="/2020/08/31/2.1.1TCP_UDP%E5%8D%8F%E8%AE%AE/C:%5CUsers%5Czhan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1599315026356.png" alt="1599315026356"></p>
 <h1 id="五、用户数据报协议UDP"><a href="#五、用户数据报协议UDP" class="headerlink" title="五、用户数据报协议UDP"></a><font color="#0A77B9">五、用户数据报协议UDP</font></h1><p>用户数据报协议UDP是Internet传输层协议。</p>
 <p>提供无连接、不可靠、数据报尽力传输服务。</p>
 <p>开发人员在<font color="red">UDP上构建应用，关注以下几点</font>：</p>
